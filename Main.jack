@@ -1,0 +1,33 @@
+class Main
+{
+    function void main() 
+    {
+        while (true)  // игровой цикл
+        {
+            do draw(0, 0);
+        }
+        return;
+    }
+
+    method void draw(int x, int y) 
+    {
+    do Screen.drawRectangle(x,y,x+47,y+7);
+    do Screen.drawRectangle(x,y+8,x+13,y+23);
+    do Screen.drawRectangle(x+15,y+8,x+47,y+13);
+    do Screen.drawLine(x+14,y+9,x+14,y+22);
+    do Screen.drawLine(x+15,y+14,x+22,y+14);
+    do Screen.drawLine(x+27,y+14,x+47,y+14);
+    do Screen.drawRectangle(x+15,y+15,x+19,y+31);
+    do Screen.drawRectangle(x+30,y+15,x+47,y+31);
+    do Screen.drawLine(x+29,y+16,x+29,y+31);
+    do Screen.drawRectangle(x+20,y+17,x+28,y+31);
+    do Screen.drawLine(x,y+24,x+12,y+24);
+    do Screen.drawLine(x+14,y+24,x+14,y+31);
+    do Screen.drawLine(x,y+25,x+11,y+25);
+    do Screen.drawLine(x+13,y+25,x+13,y+31);
+    do Screen.drawRectangle(x,y+26,x+10,y+31);
+    do Screen.drawLine(x+12,y+26,x+12,y+31);
+    do Screen.drawLine(x+11,y+27,x+11,y+31);
+    return;
+    }
+}

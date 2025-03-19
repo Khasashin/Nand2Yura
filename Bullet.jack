@@ -1,0 +1,47 @@
+class Bullet{
+
+    field boolean direction;
+    field int x, y;
+
+    constructor Bullet new(int _x, int _y, boolean _direction) 
+    {
+        let x = _x;
+        let y = _y;
+        let direction = _direction;
+        do draw();
+        return this;
+    }
+
+    method void move()
+    {
+        do erase(); 
+        if (direction)
+        {       
+            let x = x + 2;
+        } 
+        else 
+        {                
+            let x = x - 2;
+        }
+
+        if (0 < x & x < 497)  //512 - 16 + 1 нужны координаты корабля мб
+        {
+            do draw();
+        }
+        return;
+    }
+
+    method void draw()
+    {
+        do Screen.setColor(true);
+        //нарисовать
+        return;
+    }
+
+    method void erase()
+    {
+        do Screen.setColor(false);
+        //нарисовать
+        return;
+    }
+}

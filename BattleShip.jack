@@ -1,0 +1,80 @@
+class BattleShip
+{
+    // enemy size 16x16 player size 48x32
+    field int hitpoints;
+    field boolean isPlayer;
+    field int damage;
+    field int y; 
+    field int x;
+    field int sizeX; // horizontal component of size in pixel
+    field int sizeY; // vertical component of size in pixel
+
+    constructor BattleShip new(int _hitpoints, boolean _isPlayer, int _damage)
+    {
+        let hitpoints = _hitpoints;
+        let isPlayer = _isPlayer;
+        let damage = _damage;
+        if (isPlayer)
+        {
+            let sizeY = 32;
+            let sizeX = 48;
+            let x = 0;
+            let y = 3;
+        }
+        else
+        {
+            let sizeY = 16;
+            let sizeX = 16;
+            let x = 15;
+            let y = 7;
+        }
+        return this;
+    }
+
+    method void MoveShipUp()
+    {
+        if (y > 0)
+        {
+            let y = y - 1;
+        }
+        return;
+    }
+
+    method void MoveShipDown()
+    {
+        if (y < 7 & isPlayer)
+        {
+            let y = y + 1;
+        }
+        if (y < 15 & isPlayer = false)
+        {
+            let y = y + 1;
+        }
+        return;
+    }
+
+    method void Shoot()
+    {
+        // create a bullet using current location
+        return;
+    }
+
+    method void DrawShip()
+    {
+        if (isPlayer)
+        {
+            //code for drawing a player
+        }
+        else
+        {
+            //code for drawing an enemy
+        }
+        return;
+    }
+
+    method void Dispose()
+    {
+        do Memory.deAlloc(this);
+        return;
+    }
+}
