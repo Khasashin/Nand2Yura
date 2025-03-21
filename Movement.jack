@@ -1,0 +1,152 @@
+class Movement
+{
+    static int sizeX;
+    static int sizeY;
+    static int shift;
+    static int cellSize;
+
+    function void init() 
+    {
+        let sizeX = 512;
+        let sizeX = 256;
+        let shift = 2; // только делители cellSize
+        let cellSize = 16;
+        return;
+    }
+    
+    function void moveEnemy(int cellX, int cellY, String direction)
+    {
+        var int i;
+        var int x;
+        var int y;
+        let x = cellX * cellSize;
+        let y = cellY * cellSize;
+        let i = 0;
+        if (StringComparsion.stringComp(direction, "left"))
+        {
+            if (cellX > 3)
+            {
+                while (i < (cellSize / shift)) 
+                {
+                    do Display.displayPlayer(x, y, false);
+                    let x = x - shift;
+                    do Display.displayPlayer(x, y, true);
+                    let i = i + 1;
+                }
+            }
+        }
+        if (StringComparsion.stringComp(direction, "up"))
+        {
+            if (cellY > 0)
+            {
+                while (i < (cellSize / shift)) 
+                {
+                    do Display.displayPlayer(x, y, false);
+                    let y = y - shift;
+                    do Display.displayPlayer(x, y, true);
+                    let i = i + 1;
+                }
+            }
+        }
+        if (StringComparsion.stringComp(direction, "down"))
+        {
+            if (cellY < 15)
+            {
+                while (i < (cellSize / shift)) 
+                {
+                    do Display.displayPlayer(x, y, false);
+                    let y = y + shift;
+                    do Display.displayPlayer(x, y, true);
+                    let i = i + 1;
+                }
+            }
+        }
+        else 
+        {
+            do Sys.error(228);
+        }
+        return;
+    }
+
+    function void moveBullet(int cellX, int cellY, String direction)
+    {
+        var int i;
+        var int x;
+        var int y;
+        let x = cellX * cellSize;
+        let y = cellY * cellSize;
+        let i = 0;
+        if (StringComparsion.stringComp(direction, "left"))
+        {
+            if (cellX > 3)
+            {
+                while (i < (cellSize / shift)) 
+                {
+                    do Display.displayPlayer(x, y, false);
+                    let x = x - shift;
+                    do Display.displayPlayer(x, y, true);
+                    let i = i + 1;
+                }
+            }
+        }
+        if (StringComparsion.stringComp(direction, "right"))
+        {
+            if (cellX < 31)
+            {
+                while (i < (cellSize / shift)) 
+                {
+                    do Display.displayPlayer(x, y, false);
+                    let x = x + shift;
+                    do Display.displayPlayer(x, y, true);
+                    let i = i + 1;
+                }
+            }
+        }
+        else 
+        {
+            do Sys.error(228);
+        }
+        return;
+    }
+
+    function void movePlayer(int cellX, int cellY, String direction)
+    {
+        var int i;
+        var int x;
+        var int y;
+        let x = cellX * cellSize;
+        let y = cellY * cellSize;
+        let i = 0;
+        if (StringComparsion.stringComp(direction, "up"))
+        {
+            if (cellY > 0)
+            {
+                while (i < (cellSize / shift)) 
+                {
+                    do Display.displayPlayer(x, y, false);
+                    let y = y - shift;
+                    do Display.displayPlayer(x, y, true);
+                    let i = i + 1;
+                }
+            }
+        }
+        if (StringComparsion.stringComp(direction, "down"))
+        {
+            if (cellY < 14)
+            {
+                while (i < (cellSize / shift)) 
+                {
+                    do Display.displayPlayer(x, y, false);
+                    let y = y + shift;
+                    do Display.displayPlayer(x, y, true);
+                    let i = i + 1;
+                }
+            }
+        }
+        else 
+        {
+            do Sys.error(228);
+        }
+        return;
+    }
+}

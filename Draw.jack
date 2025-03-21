@@ -1,0 +1,23 @@
+class Draw
+{
+    method void displayPlayer()
+    {
+        do Screen.setColor(true);
+        //нарисовать
+        return;
+    }
+
+    method void displayBullet()
+    {
+        do Screen.setColor(true);
+        //нарисовать
+        return;
+    }
+
+    method void display()
+    {
+        do Screen.setColor(true);
+        //нарисовать
+        return;
+    }
+}

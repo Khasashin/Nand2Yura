@@ -1,0 +1,45 @@
+class StringArrayOfArrays
+{
+    field int mainLen, len;
+    field Array mainArr;
+
+    constructor StringArrayOfArrays new(int _mainLen, int _len) 
+    {
+        var int i;
+        let mainLen = _mainLen;
+        let len = _len;
+        let mainArr = Array.new(_mainLen);
+        let i = 0;
+        while (i < mainLen) 
+        {
+            let mainArr[i] = Array.new(_len);
+            let i = i + 1;
+        }
+        return this;
+    }
+
+    method String getItem(int x, int y)
+    {
+        var String battleShip;
+        var Array supArr;
+        if ((x < 0) | (x > (mainLen - 1)) | (y < 0) | (y > (len - 1))) 
+        {
+            do Sys.error(5);
+        }
+        let supArr = mainArr[x];
+        let battleShip = supArr[y];
+        return battleShip;
+    }
+
+    method void setItem(int x, int y, String cell)
+    {
+        var Array supArr;
+        if ((x < 0) | (x > (mainLen - 1)) | (y < 0) | (y > (len - 1))) 
+        {
+            do Sys.error(5);
+        }
+        let supArr = mainArr[x];
+        let supArr[y] = cell;
+        return;
+    }
+}

@@ -1,0 +1,26 @@
+class StringComparsion
+{
+    function boolean stringComp(String a1, String a2)
+    {
+        var int len1, len2, i;
+        var char symbol1, symbol2;
+        let len1 = a1.length();
+        let len2 = a2.length();
+        if (~(len1 = len2))
+        {
+            return false;
+        }
+        let i = 0;
+        while (i < len1)
+        {
+            let symbol1 = a1.charAt(i);
+            let symbol2 = a2.charAt(i);
+            if (~(symbol1 = symbol2))
+            {
+                return false;
+            }
+            let i = i + 1;
+        }
+        return true;
+    }
+}

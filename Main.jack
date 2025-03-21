@@ -1,33 +1,134 @@
 class Main
 {
+    // "" - empty cell
+    // "P" - player (max 3 hp)
+    // "E1" - enemy (1 hp)
+    // "E2" - enemy 
+    // "E3" - enemy
+    // "BE" - enemy bullet
+    // "BP" - player bullet
+    // "W" - wall (possible) 
     function void main() 
     {
-        while (true)  // игровой цикл
+        //var int x;
+        //var int y;
+        //var ArrayOfArrays twoDimensionsArray;
+        //let twoDimensionsArray = ArrayOfArrays.new(1, 1);
+        //do twoDimensionsArray.setItem(0, 0, 1);
+        //let x = twoDimensionsArray.getItem(0, 0);
+        //do Output.printInt(x); 
+        //do Output.printString("Hello");
+
+        var int x;
+        var int y;
+        let x = 0;
+        let y = 0;
+        do Movement.init();
+        while (true)
         {
-            do draw(0, 0);
+            do Movement.moveBullet(x, y, "right");
+            let x = x + 1;
         }
         return;
+        
+        
+        /**var StringArrayOfArrays gameField, nextGameField;
+        var IntArrayOfArrays primeNumbersField;
+        var int Height, Width;
+        var int x, y;
+        var StringComparsion stringComparsion;
+        let stringComparsion = StringComparsion.new();
+        let Width = 32;
+        let Height = 16;
+        let gameField = StringArrayOfArrays.new(16, 32);
+        let nextGameField = StringArrayOfArrays.new(16, 32);
+        let x = 0;
+        let y = 0;
+
+        while (y < Height) // Initializaing of gamefield step
+        {
+            while (x < Width)
+            {
+                if (x > Width - 10 & y > 4 & y < 11)
+                {
+                    do gameField.setItem(y, x, "E1");
+                }
+                if (x < 3 & y > 5 & y < 8)
+                {
+                    do gameField.setItem(y, x, "P");
+                }
+                else
+                { 
+                    do gameField.setItem(y, x, " ");
+                }
+                let x = x + 1;
+            }
+            let y = y + 1;
+        }
+
+        */
     }
 
-    method void draw(int x, int y) 
+    /**method void prov(StringArrayOfArrays gameField, StringArrayOfArrays nextGameField, String enemyDirection, char userKey, StringComparsion stringComparsion)
     {
-    do Screen.drawRectangle(x,y,x+47,y+7);
-    do Screen.drawRectangle(x,y+8,x+13,y+23);
-    do Screen.drawRectangle(x+15,y+8,x+47,y+13);
-    do Screen.drawLine(x+14,y+9,x+14,y+22);
-    do Screen.drawLine(x+15,y+14,x+22,y+14);
-    do Screen.drawLine(x+27,y+14,x+47,y+14);
-    do Screen.drawRectangle(x+15,y+15,x+19,y+31);
-    do Screen.drawRectangle(x+30,y+15,x+47,y+31);
-    do Screen.drawLine(x+29,y+16,x+29,y+31);
-    do Screen.drawRectangle(x+20,y+17,x+28,y+31);
-    do Screen.drawLine(x,y+24,x+12,y+24);
-    do Screen.drawLine(x+14,y+24,x+14,y+31);
-    do Screen.drawLine(x,y+25,x+11,y+25);
-    do Screen.drawLine(x+13,y+25,x+13,y+31);
-    do Screen.drawRectangle(x,y+26,x+10,y+31);
-    do Screen.drawLine(x+12,y+26,x+12,y+31);
-    do Screen.drawLine(x+11,y+27,x+11,y+31);
-    return;
-    }
+        var int x, y;
+        var int Width, Height;
+        var String str;
+        let str = String.new(2);
+        let x = 0;
+        let y = 0;
+        let Width = 32;
+        let Height = 16;
+        while (x < Width)
+        {
+            while (y < Height)
+            {
+                if (stringComparsion.StringComp(gameField.getItem(y, x), "P"))
+                {
+                    if (userKey = 119) //w
+                    {
+                        if (y > 0)
+                        {
+                            str.appendChar(80);
+                            nextGameField.getItem(y - 1,x) = String.new()
+                        }
+                    }
+                    if (userKey = 115) //s
+                    {
+
+                    }
+                    if (userKey = 120) //x
+                    {
+                        if (y < 256)
+                        {
+                            str.appendChar(80);
+                            nextGameField.getItem(y + 1, x) = str
+                        }
+
+                    }
+                }
+                if (stringComparsion.StringComp(gameField.getItem(y, x), "E1"))
+                {
+
+                }
+                if (stringComparsion.StringComp(gameField.getItem(y, x), "E2"))
+                {
+
+                }
+                if (stringComparsion.StringComp(gameField.getItem(y, x), "E3"))
+                {
+
+                }
+                if (stringComparsion.StringComp(gameField.getItem(y, x), "BE"))
+                {
+
+                }
+                if (stringComparsion.StringComp(gameField.getItem(y, x), "BP"))
+                {
+
+                }
+            }
+        }
+        return;
+    }*/
 }
