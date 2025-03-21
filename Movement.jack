@@ -95,9 +95,9 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayBullet(x, y, false);
-                    let x = x + shift;
                     do Display.displayBullet(x, y, true);
+                    let x = x + shift;
+                    do Display.displayBullet(x, y, false);
                     let i = i + 1;
                 }
             }

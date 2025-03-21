@@ -53,15 +53,7 @@ class Display
 
     function void displayBullet(int x, int y, boolean bool)
     {
-        if (bool)
-        {
-            do Screen.setColor(false);
-        }
-        else
-        {
-            do Screen.setColor(true);
-        }
-        
+        do Screen.setColor(bool);
         do Screen.drawRectangle(x+5,y+7,x+10,y+8);
         return;
     }
