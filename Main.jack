@@ -579,7 +579,7 @@ class Main
                 }
                 if (StringComparsion.stringComp(gameField.getItem(y, x), bp))
                 {
-                    if (x = width - 1)
+                    if (x = (width - 1))
                     {
                         do gameField.setItem(y, x, empty);
                     }
