@@ -346,9 +346,18 @@ class Main
                     }
                     else
                     {
-                        do gameField.setItem(y, x - 1, be);
-                        do gameField.setItem(y, x, empty);
-                        do Movement.moveBullet(x, y, left);
+                        if (~StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
+                        {
+                            do gameField.setItem(y, x - 1, empty);
+                            do gameField.setItem(y, x, empty);
+                            do Display.displayBullet(x * 16, y * 16, false);
+                        }
+                        else
+                        {
+                            do gameField.setItem(y, x - 1, be);
+                            do gameField.setItem(y, x, empty);
+                            do Movement.moveBullet(x, y, left);
+                        }
                     }
                 }
                 if (StringComparsion.stringComp(gameField.getItem(y, x), bp))
@@ -363,7 +372,8 @@ class Main
                         {
                             do gameField.setItem(y, x + 1, empty); //  мб должна обнулятся пуля на x,y
                             do gameField.setItem(y, x, empty);
-                            do Display.displayBullet(x, y, false); // это важно!!! не забыть в других!!!
+                            do Display.displayBullet(x * 16, y * 16, false); // это важно!!! не забыть в других!!!
+                            do Screen.drawRectangle((x + 1) * 16, y * 16, (x + 2) * 16, (y + 1) * 16);
                         }
                         else
                         {
@@ -572,9 +582,18 @@ class Main
                     }
                     else
                     {
-                        do gameField.setItem(y, x - 1, be);
-                        do gameField.setItem(y, x, empty);
-                        do Movement.moveBullet(x, y, left);
+                        if (~StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
+                        {
+                            do gameField.setItem(y, x - 1, empty);
+                            do gameField.setItem(y, x, empty);
+                            do Display.displayBullet(x * 16, y * 16, false);
+                        }
+                        else
+                        {
+                            do gameField.setItem(y, x - 1, be);
+                            do gameField.setItem(y, x, empty);
+                            do Movement.moveBullet(x, y, left);
+                        }
                     }
                 }
                 if (StringComparsion.stringComp(gameField.getItem(y, x), bp))
@@ -589,7 +608,8 @@ class Main
                         {
                             do gameField.setItem(y, x + 1, empty);
                             do gameField.setItem(y, x, empty);
-                            do Display.displayBullet(x, y, false);
+                            do Display.displayBullet(x * 16, y * 16, false);
+                            do Screen.drawRectangle((x + 1) * 16, y * 16, (x + 2) * 16, (y + 1) * 16);
                         }
                         else
                         {
