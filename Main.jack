@@ -40,11 +40,12 @@ class Main
         var boolean isGameOver;
         var int enemyDirection; // -1 is "up", 0 is "left", 1 is "down"
         var char userInputKey;
+        var int cellSize = 16;
         do Movement.init();
         let enemyDirection = -1;
         let isGameOver = false;
-        let Width = 32;
-        let Height = 16;
+        let width = 32;
+        let height = 16;
         let gameField = StringArrayOfArrays.new(16, 32);
         let nextGameField = StringArrayOfArrays.new(16, 32);
         let x = 0;
@@ -62,17 +63,20 @@ class Main
                     if ((x + y) < 34)
                     {
                         do gameField.setItem(y, x, "E1");
+                        do Display.displayEnemy(x * cellSize, y * cellSize, false, 1);
                     }
                     if ((x + y) > 33 & (x + y) < 38)
                     {
                         do gameField.setItem(y, x, "E2");
+                        do Display.displayEnemy(x * cellSize, y * cellSize, false, 2);
                     }
                     else
                     {
                         do gameField.setItem(y, x, "E3");
+                        do Display.displayEnemy(x * cellSize, y * cellSize, false, 3);
                     }
                 }
-                if (x < 3 & y > 5 & y < 8)
+                if (x = 0 & y = 7)
                 {
                     do gameField.setItem(y, x, "P");
                 }
@@ -85,6 +89,8 @@ class Main
             }
             let y = y + 1;
         }
+
+        do Display.displayPlayer(0 * cellSize, 7 * cellSize, false);
 
         while (~isGameOver) // Infnite game loop, exit by key q
         {
@@ -111,6 +117,10 @@ class Main
         var int x, y;
         var int width, height;
         var int tempInt;
+        var int cellSize;
+        var boolean isPlayerCellWas;
+        let isPlayerCellWas = false;
+        let cellSize = 16;
         let x = 0;
         let y = 0;
         let width = 32;
@@ -120,8 +130,9 @@ class Main
             let y = 0;
             while (y < height)
             {
-                if (stringComparsion.StringComp(gameField.getItem(y, x), "P"))
+                if (stringComparsion.StringComp(gameField.getItem(y, x), "P") & ~isPlayerCellWas)
                 {
+                    let isPlayerCellWas = true;
                     if (userKey = 119) //w
                     {
                         if (y > 0)
@@ -136,6 +147,7 @@ class Main
                             do nextGameField.setItem(y, 1, " ");
                             do nextGameField.setItem(y, 2, " ");
                             do Movement.movePlayer(x, y, "up");
+                            do Display.displayPlayer(x * cellSize, (y - 1) * cellSize, false);
                         }
                     }
                     if (userKey = 115) //s
