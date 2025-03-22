@@ -56,7 +56,7 @@ class Display
     {
         do Screen.setColor(bool);
 
-        if ((0 < enemyType) & (enemyType < 2)) 
+        if (enemyType = 1) 
         {
             do Screen.drawLine(x+2,y+1,x+2,y+2);
             do Screen.drawLine(x+3,y+2,x+5,y+2);
@@ -77,8 +77,7 @@ class Display
             do Screen.drawLine(x+2,y+13,x+4,y+13);
             do Screen.drawPixel(x+2,y+14);
         }
-        if ((1 < enemyType) & (enemyType < 3)) 
-        {
+        if (enemyType = 2)
             do Screen.drawPixel(x+2,y+1);
             do Screen.drawLine(x+6,y+1,x+6,y+14);
             do Screen.drawPixel(x+3,y+2);
@@ -99,7 +98,7 @@ class Display
             do Screen.drawPixel(x+3,y+13);
             do Screen.drawPixel(x+2,y+14);
         }
-        if ((2 < enemyType) & (enemyType < 4)) 
+        if (enemyType = 3) 
         {
             do Screen.drawLine(x+4,y+1,x+5,y+1);
             do Screen.drawLine(x+6,y+2,x+6,y+4);
