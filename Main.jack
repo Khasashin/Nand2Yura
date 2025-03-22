@@ -59,7 +59,7 @@ class Main
 
         while (y < height) // Initializaing of gamefield step
         {
-        let x = 0;
+            let x = 0;
             while (x < width)
             {
                 if (x > width - 10 & y > 4 & y < 11)
@@ -96,6 +96,7 @@ class Main
         //do Display.displayPlayer(0 * cellSize, 7 * cellSize, false);
         let playerX = 0;
         let playerY = 7;
+        let userInputKey = 119;
 
         while (~isGameOver) // Infnite game loop, exit by key q
         {
