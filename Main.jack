@@ -19,7 +19,7 @@ class Main
         //do Output.printInt(x); 
         //do Output.printString("Hello");
 
-        var int x;
+        /**var int x;
         var int y;
         let x = 0;
         let y = 0;
@@ -29,15 +29,14 @@ class Main
             do Movement.moveEnemy(x, y, "down", 2);
             let y = y + 1;
         }
-        return;
+        return; */
         
         
-        /**var StringArrayOfArrays gameField, nextGameField;
+        var StringArrayOfArrays gameField, nextGameField;
         var IntArrayOfArrays primeNumbersField;
         var int Height, Width;
         var int x, y;
-        var StringComparsion stringComparsion;
-        let stringComparsion = StringComparsion.new();
+        do Movement.init();
         let Width = 32;
         let Height = 16;
         let gameField = StringArrayOfArrays.new(16, 32);
@@ -51,7 +50,18 @@ class Main
             {
                 if (x > Width - 10 & y > 4 & y < 11)
                 {
-                    do gameField.setItem(y, x, "E1");
+                    if ((x + y) < 34)
+                    {
+                        do gameField.setItem(y, x, "E1");
+                    }
+                    if ((x + y) > 33 & (x + y) < 38)
+                    {
+                        do gameField.setItem(y, x, "E2");
+                    }
+                    else
+                    {
+                        do gameField.setItem(y, x, "E3");
+                    }
                 }
                 if (x < 3 & y > 5 & y < 8)
                 {
@@ -66,7 +76,7 @@ class Main
             let y = y + 1;
         }
 
-        */
+        return;
     }
 
     /**method void prov(StringArrayOfArrays gameField, StringArrayOfArrays nextGameField, String enemyDirection, char userKey, StringComparsion stringComparsion)
