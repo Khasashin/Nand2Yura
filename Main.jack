@@ -84,9 +84,9 @@ class Main
             let x = 0;
             while (x < width)
             {
-                /**if ((x > (width - 10)) & (y > 4) & (y < 11))
+                if ((x > (width - 2)) & (y > 4) & (y < 11))
                 {
-                    if ((x + y) < 34)
+                    /**if ((x + y) < 34)
                     {
                         do gameField.setItem(y, x, e1);
                         //do Display.displayEnemy(x * cellSize, y * cellSize, false, 1);
@@ -98,14 +98,15 @@ class Main
                     }
                     else
                     {
-                        do gameField.setItem(y, x, e3);
+                        
                         //do Display.displayEnemy(x * cellSize, y * cellSize, false, 3);
-                    }
-                }*/
-                if ((x > 25) & (x < 28) & (y > 5) & (y < 8))
-                {
+                    }*/
                     do gameField.setItem(y, x, e1);
                 }
+                /**if ((x > 25) & (x < 28) & (y > 5) & (y < 8))
+                {
+                    do gameField.setItem(y, x, e1);
+                }*/
                 else
                 { 
                     do gameField.setItem(y, x, empty);
