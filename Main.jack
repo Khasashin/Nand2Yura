@@ -8,12 +8,12 @@ class Main
     // "BE" - enemy bullet
     // "BP" - player bullet
     // "W" - wall (possible) 
-    field int hp;
-    field int cooldown;
-    field int enemyDirection; // 0 is "up", 1 is "left", 2 is "down"
-    field boolean isGameOver;
-    field int playerX;
-    field int playerY;
+    static int hp;
+    static int cooldown;
+    static int enemyDirection; // 0 is "up", 1 is "left", 2 is "down"
+    static boolean isGameOver;
+    static int playerX;
+    static int playerY;
 
     function void main() 
     {
@@ -100,10 +100,10 @@ class Main
 
         while (~isGameOver) // Infnite game loop, exit by key q
         {
-            userInputKey = Keyboard.keyPressed();
+            let userInputKey = Keyboard.keyPressed();
             if (userInputKey = 113)
             {
-                isGameOver = true;
+                let isGameOver = true;
             }
             else
             {
@@ -117,7 +117,7 @@ class Main
                 }
                 if (hp < 1)
                 {
-                    isGameOver = true;
+                    let isGameOver = true;
                 }
             }
         }
@@ -223,7 +223,7 @@ class Main
                         //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
                         if (x = 4)
                         {
-                            isGameOver = true;
+                            let isGameOver = true;
                         }
                     }
                 }
@@ -260,7 +260,7 @@ class Main
                         //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
                         if (x = 4)
                         {
-                            isGameOver = true;
+                            let isGameOver = true;
                         }
                     }
                 }
@@ -297,7 +297,7 @@ class Main
                         //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
                         if (x = 4)
                         {
-                            isGameOver = true;
+                            let isGameOver = true;
                         }
                     }
                 }
@@ -447,7 +447,7 @@ class Main
                         //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
                         if (x = 4)
                         {
-                            isGameOver = true;
+                            let isGameOver = true;
                         }
                     }
                 }
@@ -484,7 +484,7 @@ class Main
                         //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
                         if (x = 4)
                         {
-                            isGameOver = true;
+                            let isGameOver = true;
                         }
                     }
                 }
@@ -521,7 +521,7 @@ class Main
                         //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
                         if (x = 4)
                         {
-                            isGameOver = true;
+                            let isGameOver = true;
                         }
                     }
                 }
