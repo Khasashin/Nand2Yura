@@ -140,9 +140,9 @@ class Main
             let y = 0;
             while (y < height)
             {
+                let tempInt = x + y;
                 if (stringComparsion.StringComp(gameField.getItem(y, x), "P"))
                 {
-                    let isPlayerCellWas = true;
                     if (userKey = 119) //w
                     {
                         if (y > 0)
