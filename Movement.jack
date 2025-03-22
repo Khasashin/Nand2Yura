@@ -91,6 +91,10 @@ class Movement
                     do Display.displayBullet(x, y, true);
                     let i = i + 1;
                 }
+                if (cellX = 4)
+                {
+                    do Display.displayBullet(x, y, false);
+                }
             }
         }
         if (StringComparsion.stringComp(direction, right))
