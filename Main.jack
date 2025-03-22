@@ -21,13 +21,13 @@ class Main
 
         var int x;
         var int y;
-        let x = 4;
+        let x = 0;
         let y = 0;
         do Movement.init();
-        while (x<20)
+        while (y<10)
         {
-            do Movement.moveBullet(x, y, "right");
-            let x = x + 1;
+            do Movement.moveEnemy(x, y, "down");
+            let y = y + 1;
         }
         return;
         

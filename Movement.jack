@@ -28,9 +28,9 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayBullet(x, y, true);
+                    do Display.displayEnemy1(x, y, true);
                     let x = x - shift;
-                    do Display.displayBullet(x, y, false);
+                    do Display.displayEnemy1(x, y, false);
                     let i = i + 1;
                 }
             }
@@ -41,9 +41,9 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayBullet(x, y, true);
+                    do Display.displayEnemy1(x, y, true);
                     let y = y - shift;
-                    do Display.displayBullet(x, y, false);
+                    do Display.displayEnemy1(x, y, false);
                     let i = i + 1;
                 }
             }
@@ -54,9 +54,9 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayBullet(x, y, true);
+                    do Display.displayEnemy1(x, y, true);
                     let y = y + shift;
-                    do Display.displayBullet(x, y, false);
+                    do Display.displayEnemy1(x, y, false);
                     let i = i + 1;
                 }
             }
@@ -123,9 +123,9 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayBullet(x, y, true);
+                    do Display.displayPlayer(x, y, true);
                     let y = y - shift;
-                    do Display.displayBullet(x, y, false);
+                    do Display.displayPlayer(x, y, false);
                     let i = i + 1;
                 }
             }
@@ -136,9 +136,9 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayBullet(x, y, true);
+                    do Display.displayPlayer(x, y, true);
                     let y = y + shift;
-                    do Display.displayBullet(x, y, false);
+                    do Display.displayPlayer(x, y, false);
                     let i = i + 1;
                 }
             }
