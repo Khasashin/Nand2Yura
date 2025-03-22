@@ -34,21 +34,29 @@ class Main
         
         var StringArrayOfArrays gameField, nextGameField;
         var IntArrayOfArrays primeNumbersField;
-        var int Height, Width;
+        var int height, width;
         var int x, y;
+        var int hp, cooldown;
+        var boolean isGameOver;
+        var int enemyDirection; // -1 is "up", 0 is "left", 1 is "down"
+        var char userInputKey;
         do Movement.init();
+        let enemyDirection = -1;
+        let isGameOver = false;
         let Width = 32;
         let Height = 16;
         let gameField = StringArrayOfArrays.new(16, 32);
         let nextGameField = StringArrayOfArrays.new(16, 32);
         let x = 0;
         let y = 0;
+        let hp = 3;
+        let cooldown = 10;
 
-        while (y < Height) // Initializaing of gamefield step
+        while (y < height) // Initializaing of gamefield step
         {
-            while (x < Width)
+            while (x < width)
             {
-                if (x > Width - 10 & y > 4 & y < 11)
+                if (x > width - 10 & y > 4 & y < 11)
                 {
                     if ((x + y) < 34)
                     {
@@ -74,6 +82,11 @@ class Main
                 let x = x + 1;
             }
             let y = y + 1;
+        }
+
+        while (~isGameOver)
+        {
+
         }
 
         return;
