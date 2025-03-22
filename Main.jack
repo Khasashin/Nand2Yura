@@ -1,5 +1,26 @@
 class Main
 {
+    /**function void main() 
+    {
+        var String x;
+        var String y;
+        var boolean bool;
+        let x = "12";
+        let y = "123";
+        let bool = StringComparsion.stringComp(x, y);
+        if (bool)
+        {
+            do Output.printString("true");
+        }
+        else
+        {
+            do Output.printString("false");
+        }
+        return; 
+    }
+}*/
+
+
     // "" - empty cell
     // "P" - player (max 3 hp)
     // "E1" - enemy (1 hp)
@@ -25,32 +46,11 @@ class Main
     static String right;
     static String up;
     static String down;
+    static StringArrayOfArrays gameField;
 
     function void main() 
     {
-        //var int x;
-        //var int y;
-        //var ArrayOfArrays twoDimensionsArray;
-        //let twoDimensionsArray = ArrayOfArrays.new(1, 1);
-        //do twoDimensionsArray.setItem(0, 0, 1);
-        //let x = twoDimensionsArray.getItem(0, 0);
-        //do Output.printInt(x); 
-        //do Output.printString("Hello");
-
-        /**var int x;
-        var int y;
-        let x = 0;
-        let y = 0;
-        do Movement.init();
-        while (y<10)
-        {
-            do Movement.moveEnemy(x, y, "down", 2);
-            let y = y + 1;
-        }
-        return; */
-        
-        
-        var StringArrayOfArrays gameField;
+        //var StringArrayOfArrays gameField;
         //var IntArrayOfArrays primeNumbersField;
         var int height, width;
         var int x, y;
@@ -84,7 +84,7 @@ class Main
             let x = 0;
             while (x < width)
             {
-                if ((x > (width - 10)) & (y > 4) & (y < 11))
+                /**if ((x > (width - 10)) & (y > 4) & (y < 11))
                 {
                     if ((x + y) < 34)
                     {
@@ -101,12 +101,17 @@ class Main
                         do gameField.setItem(y, x, e3);
                         //do Display.displayEnemy(x * cellSize, y * cellSize, false, 3);
                     }
+                }*/
+                if ((x = 27) & (y = 8))
+                {
+                    do gameField.setItem(y, x, e1);
                 }
                 if ((x = 0) & (y = 7))
                 {
-                    do gameField.setItem(y, x, p);
+                    //do gameField.setItem(y, x, p);
+                    do gameField.setItem(y, x, empty);
                 }
-                else
+                if (~(x = 27) & ~(y = 8))
                 { 
                     do gameField.setItem(y, x, empty);
                 }
@@ -131,11 +136,11 @@ class Main
             {
                 if ((enemyDirection = 0) | (enemyDirection = 1))
                 {
-                    do Main.fromUpToDownCycle(gameField, userInputKey);
+                    do Main.fromUpToDownCycle(userInputKey);
                 }
                 else
                 {
-                    do Main.fromDownToUpCycle(gameField, userInputKey);
+                    do Main.fromDownToUpCycle(userInputKey);
                 }
                 if (hp < 1)
                 {
@@ -143,11 +148,10 @@ class Main
                 }
             }
         }
-
         return;
     }
 
-    function void fromUpToDownCycle(StringArrayOfArrays gameField, char userKey)
+    function void fromUpToDownCycle(char userKey)
     {
         
         //enemy shoots only if its x + y cells is 5, 13, 23, 31, 43
@@ -162,15 +166,6 @@ class Main
         let y = 0;
         let width = 32;
         let height = 16;
-        /**while (x < width)
-        {
-            let y = 0;
-            while (y < height)
-            {
-                do gameField.setItem(y, x, " ");
-            }
-            let x = x + 1;
-        }*/
         let x = 0;
         let y = 0;
         while (x < width)
@@ -178,6 +173,7 @@ class Main
             let y = 0;
             while (y < height)
             {
+                //do Output.printString(gameField.getItem(y, x));
                 let tempInt = x + y;
                 if (StringComparsion.stringComp(gameField.getItem(y, x), p))
                 {
@@ -215,6 +211,7 @@ class Main
                 }
                 if (StringComparsion.stringComp(gameField.getItem(y, x), e1))
                 {
+                    
                     if (y = 1)
                     {
                         let enemyDirection = 1;
@@ -225,15 +222,15 @@ class Main
                     }
                     if (enemyDirection = 0)
                     {
-                        do gameField.setItem(y + 1, x, e1);
+                        do gameField.setItem(y - 1, x, e1);
                         do gameField.setItem(y, x, empty);
                         do Movement.moveEnemy(x, y, up, 1);
-                        //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, false, 1);
+                        //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
                         if ((tempInt = 5) | (tempInt = 13) | (tempInt = 23) | (tempInt = 31) | (tempInt = 41))
                         {
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
-                                do gameField.setItem(y + 1, x - 1, be);
+                                do gameField.setItem(y - 1, x - 1, be);
                                 //do Display.displayBullet((x - 1) * cellSize, (y + 1) * cellSize, false);
                             }
                         }
@@ -243,7 +240,7 @@ class Main
                         do gameField.setItem(y, x - 1, e1);
                         do gameField.setItem(y, x, empty);
                         do Movement.moveEnemy(x, y, left, 1);
-                        //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
+                        //do Display.displayEnemy((x - 1) * cellSize, y * cellSize, true, 1);
                         if (x = 4)
                         {
                             let isGameOver = true;
@@ -373,7 +370,7 @@ class Main
         return;
     }
 
-    function void fromDownToUpCycle(StringArrayOfArrays gameField, char userKey)
+    function void fromDownToUpCycle(char userKey)
     {
         var int x, y;
         var int width, height;
@@ -386,15 +383,6 @@ class Main
         let y = 0;
         let width = 32;
         let height = 16;
-        /**while (x < width)
-        {
-            let y = 0;
-            while (y < height)
-            {
-                do nextGameField.setItem(y, x, " ");
-            }
-            let x = x + 1;
-        }*/
         let x = 0;
         let y = 0;
         while (x < width)
@@ -449,15 +437,15 @@ class Main
                     }
                     if (enemyDirection = 2)
                     {
-                        do gameField.setItem(y - 1, x, e1);
+                        do gameField.setItem(y + 1, x, e1);
                         do gameField.setItem(y, x, empty);
                         do Movement.moveEnemy(x, y, down, 1);
-                        //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, false, 1);
+                        //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
                         if ((tempInt = 5) | (tempInt = 13) | (tempInt = 23) | (tempInt = 31) | (tempInt = 41))
                         {
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
-                                do gameField.setItem(y - 1, x - 1, be);
+                                do gameField.setItem(y + 1, x - 1, be);
                                 //do Display.displayBullet((x - 1) * cellSize, (y + 1) * cellSize, false);
                             }
                         }
@@ -467,7 +455,7 @@ class Main
                         do gameField.setItem(y, x - 1, e1);
                         do gameField.setItem(y, x, empty);
                         do Movement.moveEnemy(x, y, left, 1);
-                        //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
+                        //do Display.displayEnemy((x - 1) * cellSize, y * cellSize, true, 1);
                         if (x = 4)
                         {
                             let isGameOver = true;

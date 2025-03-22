@@ -12,7 +12,7 @@ class Movement
     function void init() 
     {
         let sizeX = 512;
-        let sizeX = 256;
+        let sizeY = 256;
         let shift = 2; // только делители cellSize
         let cellSize = 16;
         let left = "left";
