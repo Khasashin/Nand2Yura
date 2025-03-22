@@ -54,6 +54,7 @@ class Main
 
         while (y < height) // Initializaing of gamefield step
         {
+        let x = 0;
             while (x < width)
             {
                 if (x > width - 10 & y > 4 & y < 11)
@@ -84,26 +85,33 @@ class Main
             let y = y + 1;
         }
 
-        while (~isGameOver)
+        while (~isGameOver) // Infnite game loop, exit by key q
         {
+            userInputKey = Keyboard.keyPressed();
+            if (userInputKey = 113)
+            {
+                isGameOver = true;
+            }
+            else
+            {
 
+            }
         }
 
         return;
     }
 
-    /**method void prov(StringArrayOfArrays gameField, StringArrayOfArrays nextGameField, String enemyDirection, char userKey, StringComparsion stringComparsion)
+    method void fromUpToDownCycle(StringArrayOfArrays gameField, StringArrayOfArrays nextGameField, int enemyDirection, char userKey)
     {
         var int x, y;
         var int Width, Height;
-        var String str;
-        let str = String.new(2);
         let x = 0;
         let y = 0;
         let Width = 32;
         let Height = 16;
         while (x < Width)
         {
+            let y = 0;
             while (y < Height)
             {
                 if (stringComparsion.StringComp(gameField.getItem(y, x), "P"))
@@ -112,8 +120,15 @@ class Main
                     {
                         if (y > 0)
                         {
-                            str.appendChar(80);
-                            nextGameField.getItem(y - 1,x) = String.new()
+                            do nextGameField.getItem(y - 1, 0, "P");
+                            do nextGameField.getItem(y - 1, 1, "P");
+                            do nextGameField.getItem(y - 1, 2, "P");
+                            do nextGameField.getItem(y, 0, "P");
+                            do nextGameField.getItem(y, 1, "P");
+                            do nextGameField.getItem(y, 2, "P");
+                            do nextGameField.getItem(y, 0, " ");
+                            do nextGameField.getItem(y, 1, " ");
+                            do nextGameField.getItem(y, 2, " ");
                         }
                     }
                     if (userKey = 115) //s
@@ -150,8 +165,10 @@ class Main
                 {
 
                 }
+                let y = y + 1;
             }
+            let x = x + 1;
         }
         return;
-    }*/
+    }
 }
