@@ -108,6 +108,10 @@ class Movement
                     do Display.displayBullet(x, y, true);
                     let i = i + 1;
                 }
+                if (cellX = 30)
+                {
+                    do Display.displayBullet(x, y, false);
+                }
             }
         }
         return;
