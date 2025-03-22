@@ -14,7 +14,7 @@ class Movement
         return;
     }
     
-    function void moveEnemy(int cellX, int cellY, String direction)
+    function void moveEnemy(int cellX, int cellY, String direction, int enemyType)
     {
         var int i;
         var int x;
@@ -28,9 +28,9 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayEnemy1(x, y, false);
+                    do Display.displayEnemy(x, y, false, enemyType);
                     let x = x - shift;
-                    do Display.displayEnemy1(x, y, true);
+                    do Display.displayEnemy(x, y, true, enemyType);
                     let i = i + 1;
                 }
             }
@@ -41,9 +41,9 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayEnemy1(x, y, false);
+                    do Display.displayEnemy(x, y, false, enemyType);
                     let y = y - shift;
-                    do Display.displayEnemy1(x, y, true);
+                    do Display.displayEnemy(x, y, true, enemyType);
                     let i = i + 1;
                 }
             }
@@ -54,9 +54,9 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayEnemy1(x, y, false);
+                    do Display.displayEnemy(x, y, false, enemyType);
                     let y = y + shift;
-                    do Display.displayEnemy1(x, y, true);
+                    do Display.displayEnemy(x, y, true, enemyType);
                     let i = i + 1;
                 }
             }
