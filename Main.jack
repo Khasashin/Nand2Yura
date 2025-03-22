@@ -40,7 +40,8 @@ class Main
         var boolean isGameOver;
         var int enemyDirection; // -1 is "up", 0 is "left", 1 is "down"
         var char userInputKey;
-        var int cellSize = 16;
+        var int cellSize;
+        let cellSize = 16;
         do Movement.init();
         let enemyDirection = -1;
         let isGameOver = false;
@@ -116,7 +117,7 @@ class Main
         var int width, height;
         var int tempInt;
         var int cellSize;
-        var StringArrayOfArrays nextgameField;
+        var StringArrayOfArrays nextGameField;
         let nextGameField = StringArrayOfArrays.new(16, 32);
         let cellSize = 16;
         let x = 0;
