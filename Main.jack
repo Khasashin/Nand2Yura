@@ -80,6 +80,7 @@ class Main
                 { 
                     do gameField.setItem(y, x, " ");
                 }
+                do nextGameField.setItem(y, x, " ");
                 let x = x + 1;
             }
             let y = y + 1;
