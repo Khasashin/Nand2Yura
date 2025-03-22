@@ -8,6 +8,13 @@ class Main
     // "BE" - enemy bullet
     // "BP" - player bullet
     // "W" - wall (possible) 
+    field int hp;
+    field int cooldown;
+    field int enemyDirection; // 0 is "up", 1 is "left", 2 is "down"
+    field boolean isGameOver;
+    field int playerX;
+    field int playerY;
+
     function void main() 
     {
         //var int x;
@@ -36,9 +43,6 @@ class Main
         //var IntArrayOfArrays primeNumbersField;
         var int height, width;
         var int x, y;
-        var int hp, cooldown;
-        var boolean isGameOver;
-        var int enemyDirection; // 0 is "up", 1 is "left", 2 is "down"
         var char userInputKey;
         var int cellSize;
         let cellSize = 16;
@@ -90,6 +94,8 @@ class Main
         }
 
         //do Display.displayPlayer(0 * cellSize, 7 * cellSize, false);
+        let playerX = 0;
+        let playerY = 7;
 
         while (~isGameOver) // Infnite game loop, exit by key q
         {
@@ -103,6 +109,10 @@ class Main
                 if (enemyDirection = 0 | enemyDirection = 1)
                 {
                     let gameField = fromUpToDownCycle(gameField, userInputKey);
+                    if (hp < 1)
+                    {
+                        isGameOver = true;
+                    }
                 }
             }
         }
@@ -110,12 +120,9 @@ class Main
         return;
     }
 
-    method StringArrayOfArrays fromUpToDownCycle(StringArrayOfArrays gameField, char userKey, int enemyDirection)
+    method StringArrayOfArrays fromUpToDownCycle(StringArrayOfArrays gameField, char userKey)
     {
         //enemy shoots only if its x + y cells is 5, 13, 23, 31, 43
-        //info about changing enemy direction at nextGameField[0, 1]
-        //info about losing game at nextGameField[1, 1], 1 means game lost
-        //info about how many hp player lost at nextGameField[2, 1] (0, -1, -2..)
         var int x, y;
         var int width, height;
         var int tempInt;
@@ -150,16 +157,18 @@ class Main
                     {
                         if (y > 0)
                         {
+                            let playerY = playerY - 1;
                             do nextGameField.setItem(y - 1, 0, "P");
                             do nextGameField.setItem(y, 0, " ");
                             do Movement.movePlayer(x, y, "up");
                             //do Display.displayPlayer(x * cellSize, (y - 1) * cellSize, false);
                         }
                     }
-                    if (userKey = 115) //s
+                    if (userKey = 115 & cooldown = 0) //s
                     {
                         do nextGameField.setItem(y, 3, "BP");
                         do nextGameField.setItem(y - 1, 3, "BP");
+                        let cooldown = 10;
                         //do Display.displayBullet(3 * cellSize, y * cellSize, false);
                         //do Display.displayBullet(3 * cellSize, y * cellSize, false);
                     }
@@ -167,6 +176,7 @@ class Main
                     {
                         if (y < 14)
                         {
+                            let playerY = playerY + 1;
                             do nextGameField.setItem(y + 1, 0, "P");
                             do nextGameField.setItem(y, 0, " ");
                             do Movement.movePlayer(x, y, "down");
@@ -179,11 +189,11 @@ class Main
                 {
                     if (y = 1)
                     {
-                        do nextGameField.setItem(0, 1, "1");
+                        let enemyDirection = 1;
                     }
                     if (enemyDirection = 1)
                     {
-                        do nextGameField.setItem(0, 1, "2");
+                        let enemyDirection = 2;
                     }
                     if (enemyDirection = 0)
                     {
@@ -196,7 +206,7 @@ class Main
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), " "))
                             {
                                 do nextGameField.setItem(y + 1, x - 1, "BE");
-                                do Display.displayBullet((x - 1) * cellSize, (y + 1) * cellSize, false);
+                                //do Display.displayBullet((x - 1) * cellSize, (y + 1) * cellSize, false);
                             }
                         }
                     }
@@ -208,7 +218,7 @@ class Main
                         //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
                         if (x = 4)
                         {
-                            do nextGameField.setItem(1, 1, "1");
+                            isGameOver = true;
                         }
                     }
                 }
@@ -216,11 +226,11 @@ class Main
                 {
                     if (y = 1)
                     {
-                        do nextGameField.setItem(0, 1, "1");
+                        let enemyDirection = 1;
                     }
                     if (enemyDirection = 1)
                     {
-                        do nextGameField.setItem(0, 1, "2");
+                        let enemyDirection = 2;
                     }
                     if (enemyDirection = 0)
                     {
@@ -233,7 +243,7 @@ class Main
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), " "))
                             {
                                 do nextGameField.setItem(y + 1, x - 1, "BE");
-                                do Display.displayBullet((x - 1) * cellSize, (y + 1) * cellSize, false);
+                                //do Display.displayBullet((x - 1) * cellSize, (y + 1) * cellSize, false);
                             }
                         }
                     }
@@ -245,7 +255,7 @@ class Main
                         //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
                         if (x = 4)
                         {
-                            do nextGameField.setItem(1, 1, "1");
+                            isGameOver = true;
                         }
                     }
                 }
@@ -253,11 +263,11 @@ class Main
                 {
                     if (y = 1)
                     {
-                        do nextGameField.setItem(0, 1, "1");
+                        let enemyDirection = 1;
                     }
                     if (enemyDirection = 1)
                     {
-                        do nextGameField.setItem(0, 1, "2");
+                        let enemyDirection = 2;
                     }
                     if (enemyDirection = 0)
                     {
@@ -270,7 +280,7 @@ class Main
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), " "))
                             {
                                 do nextGameField.setItem(y + 1, x - 1, "BE");
-                                do Display.displayBullet((x - 1) * cellSize, (y + 1) * cellSize, false);
+                                //do Display.displayBullet((x - 1) * cellSize, (y + 1) * cellSize, false);
                             }
                         }
                     }
@@ -282,22 +292,56 @@ class Main
                         //do Display.displayPlayer((x - 1) * cellSize, y * cellSize, false, 1);
                         if (x = 4)
                         {
-                            do nextGameField.setItem(1, 1, "1");
+                            isGameOver = true;
                         }
                     }
                 }
                 if (StringComparsion.stringComp(gameField.getItem(y, x), "BE"))
                 {
-
+                    if (x = 0)
+                    {
+                        do nextGameField.setItem(y, x, " ");
+                    }
+                    else
+                    {
+                        if (x < 5 & (playerY = y | playerY = y - 1))
+                        {
+                            let hp = hp - 1;
+                            do nextGameField.setItem(y, x, " ");
+                        }
+                        else
+                        {
+                            do nextGameField.setItem(y, x - 1, "BE");
+                            do nextGameField.setItem(y, x, " ");
+                            do Movement.moveBullet(x, y, "left");
+                        }
+                    }
                 }
                 if (StringComparsion.stringComp(gameField.getItem(y, x), "BP"))
                 {
-
+                    if (x = width - 1)
+                    {
+                        do nextGameField.setItem(y, x, " ");
+                    }
+                    else
+                    {
+                        if (~StringComparsion.stringComp(gameField.getItem(y, x + 1), " "))
+                        {
+                            do gameField.setItem(y, x + 1, " ");
+                        }
+                        else
+                        {
+                            do nextGameField.setItem(y, x + 1, "BP");
+                            do nextGameField.setItem(y, x, " ");
+                            do Movement.moveBullet(x, y, "right");
+                        }
+                    }
                 }
                 let y = y + 1;
             }
             let x = x + 1;
         }
+        let cooldown = cooldown - 1;
         return nextGameField;
     }
 }
