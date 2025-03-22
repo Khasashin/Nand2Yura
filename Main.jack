@@ -160,7 +160,9 @@ class Main
         var int tempInt;
         var int cellSize;
         var boolean isFiring;
+        var boolean mayMove;
         let isFiring = true;
+        let mayMove = true;
         //var StringArrayOfArrays nextGameField;
         //let nextGameField = StringArrayOfArrays.new(16, 32);
         let cellSize = 16;
@@ -179,10 +181,11 @@ class Main
                 let tempInt = x + y;
                 if (StringComparsion.stringComp(gameField.getItem(y, x), p))
                 {
-                    if (userKey = 87) //w
+                    if ((userKey = 87) & mayMove) //w
                     {
                         if (y > 0)
                         {
+                            let mayMove = false;
                             let playerY = playerY - 1;
                             do gameField.setItem(y - 1, 0, p);
                             do gameField.setItem(y, 0, empty);
@@ -190,7 +193,7 @@ class Main
                             //do Display.displayPlayer(x * cellSize, (y - 1) * cellSize, false);
                         }
                     }
-                    if ((userKey = 83) & (cooldown = 0) & (cooldown = 0)) //s
+                    if ((userKey = 83) & (cooldown < 1)) //s
                     {
                         do gameField.setItem(y, 4, bp);
                         do gameField.setItem(y + 1, 4, bp);
@@ -200,10 +203,11 @@ class Main
                         //do Display.displayBullet(3 * cellSize, y * cellSize, false);
                         //do Display.displayBullet(3 * cellSize, y * cellSize, false);
                     }
-                    if (userKey = 80) //x
+                    if ((userKey = 80) & mayMove) //x
                     {
                         if (y < 14)
                         {
+                            let mayMove = false;
                             let playerY = playerY + 1;
                             do gameField.setItem(y + 1, 0, p);
                             do gameField.setItem(y, 0, empty);
@@ -384,7 +388,9 @@ class Main
         var int tempInt;
         var int cellSize;
         var boolean isFiring;
+        var boolean mayMove;
         let isFiring = true;
+        let mayMove = true;
         //var StringArrayOfArrays nextGameField;
         //let nextGameField = StringArrayOfArrays.new(16, 32);
         let cellSize = 16;
@@ -402,10 +408,11 @@ class Main
                 let tempInt = x + y;
                 if (StringComparsion.stringComp(gameField.getItem(y, x), p))
                 {
-                    if (userKey = 87) //w
+                    if ((userKey = 87) & mayMove) //w
                     {
                         if (y > 0)
                         {
+                            let mayMove = false;
                             let playerY = playerY - 1;
                             do gameField.setItem(y - 1, 0, p);
                             do gameField.setItem(y, 0, empty);
@@ -413,7 +420,7 @@ class Main
                             //do Display.displayPlayer(x * cellSize, (y - 1) * cellSize, false);
                         }
                     }
-                    if ((userKey = 83) & (cooldown = 0) & (cooldown = 0)) //s
+                    if ((userKey = 83) & (cooldown < 1)) //s
                     {
                         do gameField.setItem(y, 4, bp);
                         do gameField.setItem(y + 1, 4, bp);
@@ -423,10 +430,11 @@ class Main
                         //do Display.displayBullet(3 * cellSize, y * cellSize, false);
                         //do Display.displayBullet(3 * cellSize, y * cellSize, false);
                     }
-                    if (userKey = 80) //x
+                    if ((userKey = 80) & mayMove) //x
                     {
                         if (y < 14)
                         {
+                            let mayMove = false;
                             let playerY = playerY + 1;
                             do gameField.setItem(y + 1, 0, p);
                             do gameField.setItem(y, 0, empty);
