@@ -32,7 +32,7 @@ class Main
         return; */
         
         
-        var StringArrayOfArrays gameField, nextGameField;
+        var StringArrayOfArrays gameField;
         //var IntArrayOfArrays primeNumbersField;
         var int height, width;
         var int x, y;
@@ -47,7 +47,6 @@ class Main
         let width = 32;
         let height = 16;
         let gameField = StringArrayOfArrays.new(16, 32);
-        let nextGameField = StringArrayOfArrays.new(16, 32);
         let x = 0;
         let y = 0;
         let hp = 3;
@@ -84,7 +83,6 @@ class Main
                 { 
                     do gameField.setItem(y, x, " ");
                 }
-                do nextGameField.setItem(y, x, " ");
                 let x = x + 1;
             }
             let y = y + 1;
@@ -103,7 +101,7 @@ class Main
             {
                 if (enemyDirection = -1 | enemyDirection = 0)
                 {
-                    do fromUpToDownCycle(gameField, nextGameField, userInputKey);
+                    let gameField = fromUpToDownCycle(gameField, userInputKey);
                 }
             }
         }
@@ -111,15 +109,15 @@ class Main
         return;
     }
 
-    method void fromUpToDownCycle(StringArrayOfArrays gameField, StringArrayOfArrays nextGameField, char userKey)
+    method StringArrayOfArrays fromUpToDownCycle(StringArrayOfArrays gameField, char userKey)
     {
         //enemy shoots only if its x + y cells is 5, 13, 23, 31, 43
         var int x, y;
         var int width, height;
         var int tempInt;
         var int cellSize;
-        var boolean isPlayerCellWas;
-        let isPlayerCellWas = false;
+        var StringArrayOfArrays nextgameField;
+        let nextGameField = StringArrayOfArrays.new(16, 32);
         let cellSize = 16;
         let x = 0;
         let y = 0;
@@ -130,7 +128,18 @@ class Main
             let y = 0;
             while (y < height)
             {
-                if (stringComparsion.StringComp(gameField.getItem(y, x), "P") & ~isPlayerCellWas)
+                do nextGameField.setItem(y, x, " ");
+            }
+            let x = x + 1;
+        }
+        let x = 0;
+        let y = 0;
+        while (x < width)
+        {
+            let y = 0;
+            while (y < height)
+            {
+                if (stringComparsion.StringComp(gameField.getItem(y, x), "P"))
                 {
                     let isPlayerCellWas = true;
                     if (userKey = 119) //w
@@ -138,14 +147,7 @@ class Main
                         if (y > 0)
                         {
                             do nextGameField.setItem(y - 1, 0, "P");
-                            do nextGameField.setItem(y - 1, 1, "P");
-                            do nextGameField.setItem(y - 1, 2, "P");
-                            do nextGameField.setItem(y, 0, "P");
-                            do nextGameField.setItem(y, 1, "P");
-                            do nextGameField.setItem(y, 2, "P");
                             do nextGameField.setItem(y, 0, " ");
-                            do nextGameField.setItem(y, 1, " ");
-                            do nextGameField.setItem(y, 2, " ");
                             do Movement.movePlayer(x, y, "up");
                             do Display.displayPlayer(x * cellSize, (y - 1) * cellSize, false);
                         }
@@ -188,6 +190,6 @@ class Main
             }
             let x = x + 1;
         }
-        return;
+        return nextGameField;
     }
 }
