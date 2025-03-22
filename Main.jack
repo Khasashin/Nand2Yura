@@ -106,12 +106,12 @@ class Main
                 {
                     do gameField.setItem(y, x, e1);
                 }
-                if ((x = 0) & (y = 7))
+                /**if ((x = 0) & (y = 7))
                 {
                     //do gameField.setItem(y, x, p);
                     do gameField.setItem(y, x, empty);
-                }
-                if (~(x = 27) & ~(y = 8))
+                }*/
+                else
                 { 
                     do gameField.setItem(y, x, empty);
                 }
@@ -329,7 +329,7 @@ class Main
                     }
                     else
                     {
-                        if ((x < 5) & ((playerY = y) | (playerY = (y - 1))))
+                        if ((x < 5) & ((playerY = y) | (playerY = (y - 1)))) // <4 +1
                         {
                             let hp = hp - 1;
                             do gameField.setItem(y, x, empty);
@@ -352,7 +352,7 @@ class Main
                     {
                         if (~StringComparsion.stringComp(gameField.getItem(y, x + 1), empty))
                         {
-                            do gameField.setItem(y, x + 1, empty);
+                            do gameField.setItem(y, x + 1, empty); //  мб должна обнулятся пуля на x,y
                         }
                         else
                         {
