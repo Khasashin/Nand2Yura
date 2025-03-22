@@ -61,10 +61,6 @@ class Movement
                 }
             }
         }
-        else 
-        {
-            do Sys.error(228);
-        }
         return;
     }
 
@@ -102,10 +98,6 @@ class Movement
                 }
             }
         }
-        else 
-        {
-            do Sys.error(228);
-        }
         return;
     }
 
@@ -142,10 +134,6 @@ class Movement
                     let i = i + 1;
                 }
             }
-        }
-        else 
-        {
-            do Sys.error(228);
         }
         return;
     }

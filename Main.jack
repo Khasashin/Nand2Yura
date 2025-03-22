@@ -26,7 +26,7 @@ class Main
         do Movement.init();
         while (y<10)
         {
-            do Movement.moveEnemy(x, y, "down");
+            do Movement.moveEnemy(x, y, "down", 2);
             let y = y + 1;
         }
         return;
