@@ -33,7 +33,7 @@ class Main
         
         
         var StringArrayOfArrays gameField, nextGameField;
-        var IntArrayOfArrays primeNumbersField;
+        //var IntArrayOfArrays primeNumbersField;
         var int height, width;
         var int x, y;
         var int hp, cooldown;
@@ -95,25 +95,30 @@ class Main
             }
             else
             {
-
+                if (enemyDirection = -1 | enemyDirection = 0)
+                {
+                    do fromUpToDownCycle(gameField, nextGameField, userInputKey);
+                }
             }
         }
 
         return;
     }
 
-    method void fromUpToDownCycle(StringArrayOfArrays gameField, StringArrayOfArrays nextGameField, int enemyDirection, char userKey)
+    method void fromUpToDownCycle(StringArrayOfArrays gameField, StringArrayOfArrays nextGameField, char userKey)
     {
+        //enemy shoots only if its x + y cells is 5, 13, 23, 31, 43
         var int x, y;
-        var int Width, Height;
+        var int width, height;
+        var int tempInt;
         let x = 0;
         let y = 0;
-        let Width = 32;
-        let Height = 16;
-        while (x < Width)
+        let width = 32;
+        let height = 16;
+        while (x < width)
         {
             let y = 0;
-            while (y < Height)
+            while (y < height)
             {
                 if (stringComparsion.StringComp(gameField.getItem(y, x), "P"))
                 {
@@ -121,15 +126,16 @@ class Main
                     {
                         if (y > 0)
                         {
-                            do nextGameField.getItem(y - 1, 0, "P");
-                            do nextGameField.getItem(y - 1, 1, "P");
-                            do nextGameField.getItem(y - 1, 2, "P");
-                            do nextGameField.getItem(y, 0, "P");
-                            do nextGameField.getItem(y, 1, "P");
-                            do nextGameField.getItem(y, 2, "P");
-                            do nextGameField.getItem(y, 0, " ");
-                            do nextGameField.getItem(y, 1, " ");
-                            do nextGameField.getItem(y, 2, " ");
+                            do nextGameField.setItem(y - 1, 0, "P");
+                            do nextGameField.setItem(y - 1, 1, "P");
+                            do nextGameField.setItem(y - 1, 2, "P");
+                            do nextGameField.setItem(y, 0, "P");
+                            do nextGameField.setItem(y, 1, "P");
+                            do nextGameField.setItem(y, 2, "P");
+                            do nextGameField.setItem(y, 0, " ");
+                            do nextGameField.setItem(y, 1, " ");
+                            do nextGameField.setItem(y, 2, " ");
+                            do Movement.movePlayer(x, y, "up");
                         }
                     }
                     if (userKey = 115) //s
