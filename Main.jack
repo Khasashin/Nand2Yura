@@ -109,11 +109,11 @@ class Main
             {
                 if ((enemyDirection = 0) | (enemyDirection = 1))
                 {
-                    let gameField = fromUpToDownCycle(gameField, userInputKey);
+                    let gameField = Main.fromUpToDownCycle(gameField, userInputKey);
                 }
                 else
                 {
-                    let gameField = fromDownToUpCycle(gameField, userInputKey);
+                    let gameField = Main.fromDownToUpCycle(gameField, userInputKey);
                 }
                 if (hp < 1)
                 {
@@ -125,7 +125,7 @@ class Main
         return;
     }
 
-    method StringArrayOfArrays fromUpToDownCycle(StringArrayOfArrays gameField, char userKey)
+    function StringArrayOfArrays fromUpToDownCycle(StringArrayOfArrays gameField, char userKey)
     {
         //enemy shoots only if its x + y cells is 5, 13, 23, 31, 43
         var int x, y;
@@ -350,7 +350,7 @@ class Main
         return nextGameField;
     }
 
-    method StringArrayOfArrays fromDownToUpCycle(StringArrayOfArrays gameField, char userKey)
+    function StringArrayOfArrays fromDownToUpCycle(StringArrayOfArrays gameField, char userKey)
     {
         var int x, y;
         var int width, height;
