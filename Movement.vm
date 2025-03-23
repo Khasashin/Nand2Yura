@@ -3,7 +3,7 @@ push constant 512
 pop static 0
 push constant 256
 pop static 1
-push constant 2
+push constant 1
 pop static 2
 push constant 16
 pop static 3
@@ -230,10 +230,18 @@ call Math.divide 2
 lt
 not
 if-goto WHILE_END0
+push constant 0
+call Screen.setColor 1
+pop temp 0
 push local 1
 push local 2
-push constant 0
-call Display.displayBullet 3
+push local 1
+push constant 16
+add
+push local 2
+push constant 16
+add
+call Screen.drawRectangle 4
 pop temp 0
 push local 1
 push static 2
@@ -257,10 +265,18 @@ eq
 if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
+push constant 0
+call Screen.setColor 1
+pop temp 0
 push local 1
 push local 2
-push constant 0
-call Display.displayBullet 3
+push local 1
+push constant 16
+add
+push local 2
+push constant 16
+add
+call Screen.drawRectangle 4
 pop temp 0
 label IF_FALSE2
 label IF_FALSE1
@@ -285,10 +301,18 @@ call Math.divide 2
 lt
 not
 if-goto WHILE_END1
+push constant 0
+call Screen.setColor 1
+pop temp 0
 push local 1
 push local 2
-push constant 0
-call Display.displayBullet 3
+push local 1
+push constant 16
+add
+push local 2
+push constant 16
+add
+call Screen.drawRectangle 4
 pop temp 0
 push local 1
 push static 2
@@ -312,10 +336,18 @@ eq
 if-goto IF_TRUE5
 goto IF_FALSE5
 label IF_TRUE5
+push constant 0
+call Screen.setColor 1
+pop temp 0
 push local 1
 push local 2
-push constant 0
-call Display.displayBullet 3
+push local 1
+push constant 16
+add
+push local 2
+push constant 16
+add
+call Screen.drawRectangle 4
 pop temp 0
 label IF_FALSE5
 label IF_FALSE4

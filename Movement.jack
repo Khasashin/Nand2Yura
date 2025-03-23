@@ -13,7 +13,7 @@ class Movement
     {
         let sizeX = 512;
         let sizeY = 256;
-        let shift = 2; // только делители cellSize
+        let shift = 1; // только делители cellSize
         let cellSize = 16;
         let left = "left";
         let right = "right";
@@ -86,14 +86,16 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayBullet(x, y, false);
+                    do Screen.setColor(false);
+                    do Screen.drawRectangle(x, y, x + 16, y + 16);
                     let x = x - shift;
                     do Display.displayBullet(x, y, true);
                     let i = i + 1;
                 }
                 if (cellX = 4)
                 {
-                    do Display.displayBullet(x, y, false);
+                    do Screen.setColor(false);
+                    do Screen.drawRectangle(x, y, x + 16, y + 16);
                 }
             }
         }
@@ -103,14 +105,16 @@ class Movement
             {
                 while (i < (cellSize / shift)) 
                 {
-                    do Display.displayBullet(x, y, false);
+                    do Screen.setColor(false);
+                    do Screen.drawRectangle(x, y, x + 16, y + 16);
                     let x = x + shift;
                     do Display.displayBullet(x, y, true);
                     let i = i + 1;
                 }
                 if (cellX = 30)
                 {
-                    do Display.displayBullet(x, y, false);
+                    do Screen.setColor(false);
+                    do Screen.drawRectangle(x, y, x + 16, y + 16);
                 }
             }
         }
