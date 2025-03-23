@@ -1,0 +1,1899 @@
+function Main.main 6
+push constant 16
+pop local 5
+call Movement.init 0
+pop temp 0
+push constant 0
+pop static 2
+push constant 0
+pop static 3
+push constant 32
+pop local 1
+push constant 16
+pop local 0
+push constant 16
+push constant 32
+call StringArrayOfArrays.new 2
+pop static 18
+push constant 0
+pop local 2
+push constant 0
+pop local 3
+push constant 3
+pop static 0
+push constant 3
+pop static 1
+push constant 25
+pop static 17
+push constant 1
+call String.new 1
+push constant 32
+call String.appendChar 2
+pop static 6
+push constant 1
+call String.new 1
+push constant 112
+call String.appendChar 2
+pop static 7
+push constant 2
+call String.new 1
+push constant 101
+call String.appendChar 2
+push constant 49
+call String.appendChar 2
+pop static 8
+push constant 2
+call String.new 1
+push constant 101
+call String.appendChar 2
+push constant 50
+call String.appendChar 2
+pop static 9
+push constant 2
+call String.new 1
+push constant 101
+call String.appendChar 2
+push constant 51
+call String.appendChar 2
+pop static 10
+push constant 2
+call String.new 1
+push constant 98
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+pop static 11
+push constant 2
+call String.new 1
+push constant 98
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+pop static 12
+push constant 4
+call String.new 1
+push constant 108
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 102
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+pop static 13
+push constant 5
+call String.new 1
+push constant 114
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 103
+call String.appendChar 2
+push constant 104
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+pop static 14
+push constant 2
+call String.new 1
+push constant 117
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+pop static 15
+push constant 4
+call String.new 1
+push constant 100
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 119
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+pop static 16
+label WHILE_EXP0
+push local 3
+push local 0
+lt
+not
+if-goto WHILE_END0
+push constant 0
+pop local 2
+label WHILE_EXP1
+push local 2
+push local 1
+lt
+not
+if-goto WHILE_END1
+push local 2
+push local 1
+push constant 6
+sub
+gt
+push local 3
+push constant 1
+gt
+and
+push local 3
+push constant 14
+lt
+and
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 2
+push local 1
+push constant 5
+sub
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push static 18
+push local 3
+push local 2
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE1
+push local 2
+push local 1
+push constant 2
+sub
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push static 18
+push local 3
+push local 2
+push static 8
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE2
+push local 2
+push local 1
+push constant 1
+sub
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push static 18
+push local 3
+push local 2
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE3
+push local 2
+push local 1
+push constant 3
+sub
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push static 18
+push local 3
+push local 2
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE4
+push local 2
+push local 1
+push constant 4
+sub
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push static 18
+push local 3
+push local 2
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE5
+goto IF_END0
+label IF_FALSE0
+push static 18
+push local 3
+push local 2
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_END0
+push local 2
+push constant 0
+eq
+push local 3
+push constant 7
+eq
+and
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push static 18
+push local 3
+push local 2
+push static 7
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE6
+push local 2
+push constant 1
+add
+pop local 2
+goto WHILE_EXP1
+label WHILE_END1
+push local 3
+push constant 1
+add
+pop local 3
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+pop static 4
+push constant 7
+pop static 5
+push constant 119
+pop local 4
+label WHILE_EXP2
+push static 3
+not
+not
+if-goto WHILE_END2
+call Keyboard.keyPressed 0
+pop local 4
+push local 4
+push constant 81
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push constant 0
+not
+pop static 3
+goto IF_END7
+label IF_FALSE7
+push static 2
+push constant 0
+eq
+push static 2
+push constant 1
+eq
+or
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push local 4
+call Main.fromUpToDownCycle 1
+pop temp 0
+goto IF_END8
+label IF_FALSE8
+push local 4
+call Main.fromDownToUpCycle 1
+pop temp 0
+label IF_END8
+push static 0
+push constant 1
+lt
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push constant 0
+not
+pop static 3
+label IF_FALSE9
+label IF_END7
+goto WHILE_EXP2
+label WHILE_END2
+push constant 0
+return
+function Main.fromUpToDownCycle 7
+push constant 0
+not
+pop local 6
+push constant 16
+pop local 5
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+push constant 32
+pop local 2
+push constant 16
+pop local 3
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+label WHILE_EXP0
+push local 0
+push local 2
+lt
+not
+if-goto WHILE_END0
+push constant 0
+pop local 1
+label WHILE_EXP1
+push local 1
+push local 3
+lt
+not
+if-goto WHILE_END1
+push local 0
+push local 1
+add
+pop local 4
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 7
+call StringComparsion.stringComp 2
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 0
+push constant 87
+eq
+push local 6
+and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 1
+push constant 0
+gt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 0
+pop local 6
+push static 5
+push constant 1
+sub
+pop static 5
+push static 18
+push local 1
+push constant 1
+sub
+push constant 0
+push static 7
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push constant 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 15
+call Movement.movePlayer 3
+pop temp 0
+label IF_FALSE2
+label IF_FALSE1
+push argument 0
+push constant 83
+eq
+push static 1
+push constant 1
+lt
+and
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push static 18
+push local 1
+push constant 3
+push static 12
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push constant 1
+add
+push constant 3
+push static 12
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push constant 3
+pop static 1
+push constant 4
+push local 1
+push static 14
+call Movement.moveBullet 3
+pop temp 0
+push constant 4
+push local 1
+push constant 1
+add
+push static 14
+call Movement.moveBullet 3
+pop temp 0
+label IF_FALSE3
+push argument 0
+push constant 88
+eq
+push local 6
+and
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push local 1
+push constant 14
+lt
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 0
+pop local 6
+push static 5
+push constant 1
+add
+pop static 5
+push static 18
+push local 1
+push constant 1
+add
+push constant 0
+push static 7
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push constant 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 16
+call Movement.movePlayer 3
+pop temp 0
+label IF_FALSE5
+label IF_FALSE4
+label IF_FALSE0
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 8
+call StringComparsion.stringComp 2
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push local 1
+push constant 1
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push constant 1
+pop static 2
+label IF_FALSE7
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push constant 2
+pop static 2
+label IF_FALSE8
+push static 2
+push constant 0
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push static 18
+push local 1
+push constant 1
+sub
+push local 0
+push static 8
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 15
+push constant 1
+call Movement.moveEnemy 4
+pop temp 0
+push static 17
+push constant 0
+gt
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push static 17
+push constant 1
+sub
+pop static 17
+label IF_FALSE10
+push local 4
+push constant 8
+eq
+push local 4
+push constant 22
+eq
+or
+push local 4
+push constant 36
+eq
+or
+push static 17
+push constant 0
+eq
+and
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push constant 22
+pop static 17
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+call StringArrayOfArrays.getItem 3
+push static 6
+call StringComparsion.stringComp 2
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 11
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE12
+label IF_FALSE11
+goto IF_END9
+label IF_FALSE9
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 8
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 13
+push constant 1
+call Movement.moveEnemy 4
+pop temp 0
+push local 0
+push constant 4
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push constant 0
+not
+pop static 3
+label IF_FALSE13
+label IF_END9
+label IF_FALSE6
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 9
+call StringComparsion.stringComp 2
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push local 1
+push constant 1
+eq
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+push constant 1
+pop static 2
+label IF_FALSE15
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE16
+goto IF_FALSE16
+label IF_TRUE16
+push constant 2
+pop static 2
+label IF_FALSE16
+push static 2
+push constant 0
+eq
+if-goto IF_TRUE17
+goto IF_FALSE17
+label IF_TRUE17
+push static 18
+push local 1
+push constant 1
+add
+push local 0
+push static 9
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 15
+push constant 2
+call Movement.moveEnemy 4
+pop temp 0
+push local 4
+push constant 5
+eq
+push local 4
+push constant 13
+eq
+or
+push local 4
+push constant 23
+eq
+or
+push local 4
+push constant 31
+eq
+or
+push local 4
+push constant 41
+eq
+or
+if-goto IF_TRUE18
+goto IF_FALSE18
+label IF_TRUE18
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+call StringArrayOfArrays.getItem 3
+push static 6
+call StringComparsion.stringComp 2
+if-goto IF_TRUE19
+goto IF_FALSE19
+label IF_TRUE19
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 11
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE19
+label IF_FALSE18
+goto IF_END17
+label IF_FALSE17
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 9
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 13
+push constant 2
+call Movement.moveEnemy 4
+pop temp 0
+push local 0
+push constant 4
+eq
+if-goto IF_TRUE20
+goto IF_FALSE20
+label IF_TRUE20
+push constant 0
+not
+pop static 3
+label IF_FALSE20
+label IF_END17
+label IF_FALSE14
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 10
+call StringComparsion.stringComp 2
+if-goto IF_TRUE21
+goto IF_FALSE21
+label IF_TRUE21
+push local 1
+push constant 1
+eq
+if-goto IF_TRUE22
+goto IF_FALSE22
+label IF_TRUE22
+push constant 1
+pop static 2
+label IF_FALSE22
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE23
+goto IF_FALSE23
+label IF_TRUE23
+push constant 2
+pop static 2
+label IF_FALSE23
+push static 2
+push constant 0
+eq
+if-goto IF_TRUE24
+goto IF_FALSE24
+label IF_TRUE24
+push static 18
+push local 1
+push constant 1
+add
+push local 0
+push static 10
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 15
+push constant 2
+call Movement.moveEnemy 4
+pop temp 0
+push local 4
+push constant 5
+eq
+push local 4
+push constant 13
+eq
+or
+push local 4
+push constant 23
+eq
+or
+push local 4
+push constant 31
+eq
+or
+push local 4
+push constant 41
+eq
+or
+if-goto IF_TRUE25
+goto IF_FALSE25
+label IF_TRUE25
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+call StringArrayOfArrays.getItem 3
+push static 6
+call StringComparsion.stringComp 2
+if-goto IF_TRUE26
+goto IF_FALSE26
+label IF_TRUE26
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 11
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE26
+label IF_FALSE25
+goto IF_END24
+label IF_FALSE24
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 10
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 13
+push constant 2
+call Movement.moveEnemy 4
+pop temp 0
+push local 0
+push constant 4
+eq
+if-goto IF_TRUE27
+goto IF_FALSE27
+label IF_TRUE27
+push constant 0
+not
+pop static 3
+label IF_FALSE27
+label IF_END24
+label IF_FALSE21
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 11
+call StringComparsion.stringComp 2
+if-goto IF_TRUE28
+goto IF_FALSE28
+label IF_TRUE28
+push local 0
+push constant 4
+lt
+if-goto IF_TRUE29
+goto IF_FALSE29
+label IF_TRUE29
+push static 5
+push local 1
+eq
+push static 5
+push local 1
+push constant 1
+add
+eq
+or
+if-goto IF_TRUE30
+goto IF_FALSE30
+label IF_TRUE30
+push static 0
+push constant 1
+sub
+pop static 0
+label IF_FALSE30
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+goto IF_END29
+label IF_FALSE29
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+call StringArrayOfArrays.getItem 3
+push static 6
+call StringComparsion.stringComp 2
+not
+if-goto IF_TRUE31
+goto IF_FALSE31
+label IF_TRUE31
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push constant 16
+call Math.multiply 2
+push local 1
+push constant 16
+call Math.multiply 2
+push constant 0
+call Display.displayBullet 3
+pop temp 0
+goto IF_END31
+label IF_FALSE31
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 11
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 13
+call Movement.moveBullet 3
+pop temp 0
+label IF_END31
+label IF_END29
+label IF_FALSE28
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 12
+call StringComparsion.stringComp 2
+if-goto IF_TRUE32
+goto IF_FALSE32
+label IF_TRUE32
+push local 0
+push local 2
+push constant 1
+sub
+eq
+if-goto IF_TRUE33
+goto IF_FALSE33
+label IF_TRUE33
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+goto IF_END33
+label IF_FALSE33
+push static 18
+push local 1
+push local 0
+push constant 1
+add
+call StringArrayOfArrays.getItem 3
+push static 6
+call StringComparsion.stringComp 2
+not
+if-goto IF_TRUE34
+goto IF_FALSE34
+label IF_TRUE34
+push static 18
+push local 1
+push local 0
+push constant 1
+add
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push constant 16
+call Math.multiply 2
+push local 1
+push constant 16
+call Math.multiply 2
+push constant 0
+call Display.displayBullet 3
+pop temp 0
+push local 0
+push constant 1
+add
+push constant 16
+call Math.multiply 2
+push local 1
+push constant 16
+call Math.multiply 2
+push local 0
+push constant 2
+add
+push constant 16
+call Math.multiply 2
+push local 1
+push constant 1
+add
+push constant 16
+call Math.multiply 2
+call Screen.drawRectangle 4
+pop temp 0
+goto IF_END34
+label IF_FALSE34
+push static 18
+push local 1
+push local 0
+push constant 1
+add
+push static 12
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 14
+call Movement.moveBullet 3
+pop temp 0
+label IF_END34
+label IF_END33
+label IF_FALSE32
+push local 1
+push constant 1
+add
+pop local 1
+goto WHILE_EXP1
+label WHILE_END1
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push static 1
+push constant 1
+sub
+pop static 1
+push constant 0
+return
+function Main.fromDownToUpCycle 7
+push constant 0
+not
+pop local 6
+push constant 16
+pop local 5
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+push constant 32
+pop local 2
+push constant 16
+pop local 3
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+label WHILE_EXP0
+push local 0
+push local 2
+lt
+not
+if-goto WHILE_END0
+push local 3
+push constant 1
+sub
+pop local 1
+label WHILE_EXP1
+push local 1
+push constant 1
+add
+push constant 0
+gt
+not
+if-goto WHILE_END1
+push local 0
+push local 1
+add
+pop local 4
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 7
+call StringComparsion.stringComp 2
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 0
+push constant 87
+eq
+push local 6
+and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 1
+push constant 0
+gt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 0
+pop local 6
+push static 5
+push constant 1
+sub
+pop static 5
+push static 18
+push local 1
+push constant 1
+sub
+push constant 0
+push static 7
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push constant 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 15
+call Movement.movePlayer 3
+pop temp 0
+label IF_FALSE2
+label IF_FALSE1
+push argument 0
+push constant 83
+eq
+push static 1
+push constant 1
+lt
+and
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push static 18
+push local 1
+push constant 3
+push static 12
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push constant 1
+add
+push constant 3
+push static 12
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push constant 3
+pop static 1
+push constant 4
+push local 1
+push static 14
+call Movement.moveBullet 3
+pop temp 0
+push constant 4
+push local 1
+push constant 1
+add
+push static 14
+call Movement.moveBullet 3
+pop temp 0
+label IF_FALSE3
+push argument 0
+push constant 88
+eq
+push local 6
+and
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push local 1
+push constant 14
+lt
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 0
+pop local 6
+push static 5
+push constant 1
+add
+pop static 5
+push static 18
+push local 1
+push constant 1
+add
+push constant 0
+push static 7
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push constant 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 16
+call Movement.movePlayer 3
+pop temp 0
+label IF_FALSE5
+label IF_FALSE4
+label IF_FALSE0
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 8
+call StringComparsion.stringComp 2
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push local 1
+push local 3
+push constant 2
+sub
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push constant 1
+pop static 2
+label IF_FALSE7
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push constant 0
+pop static 2
+label IF_FALSE8
+push static 2
+push constant 2
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push static 18
+push local 1
+push constant 1
+add
+push local 0
+push static 8
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 16
+push constant 1
+call Movement.moveEnemy 4
+pop temp 0
+push static 17
+push constant 0
+gt
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push static 17
+push constant 1
+sub
+pop static 17
+label IF_FALSE10
+push local 4
+push constant 5
+eq
+push local 4
+push constant 26
+eq
+or
+push local 4
+push constant 41
+eq
+or
+push static 17
+push constant 0
+eq
+and
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push constant 20
+pop static 17
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+call StringArrayOfArrays.getItem 3
+push static 6
+call StringComparsion.stringComp 2
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 11
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE12
+label IF_FALSE11
+goto IF_END9
+label IF_FALSE9
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 8
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 13
+push constant 1
+call Movement.moveEnemy 4
+pop temp 0
+push local 0
+push constant 4
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push constant 0
+not
+pop static 3
+label IF_FALSE13
+label IF_END9
+label IF_FALSE6
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 9
+call StringComparsion.stringComp 2
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push local 1
+push local 3
+push constant 2
+sub
+eq
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+push constant 1
+pop static 2
+label IF_FALSE15
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE16
+goto IF_FALSE16
+label IF_TRUE16
+push constant 0
+pop static 2
+label IF_FALSE16
+push static 2
+push constant 2
+eq
+if-goto IF_TRUE17
+goto IF_FALSE17
+label IF_TRUE17
+push static 18
+push local 1
+push constant 1
+sub
+push local 0
+push static 9
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 16
+push constant 2
+call Movement.moveEnemy 4
+pop temp 0
+push local 4
+push constant 5
+eq
+push local 4
+push constant 13
+eq
+or
+push local 4
+push constant 23
+eq
+or
+push local 4
+push constant 31
+eq
+or
+push local 4
+push constant 41
+eq
+or
+if-goto IF_TRUE18
+goto IF_FALSE18
+label IF_TRUE18
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+call StringArrayOfArrays.getItem 3
+push static 6
+call StringComparsion.stringComp 2
+if-goto IF_TRUE19
+goto IF_FALSE19
+label IF_TRUE19
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 11
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE19
+label IF_FALSE18
+goto IF_END17
+label IF_FALSE17
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 9
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 13
+push constant 2
+call Movement.moveEnemy 4
+pop temp 0
+push local 0
+push constant 4
+eq
+if-goto IF_TRUE20
+goto IF_FALSE20
+label IF_TRUE20
+push constant 0
+not
+pop static 3
+label IF_FALSE20
+label IF_END17
+label IF_FALSE14
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 10
+call StringComparsion.stringComp 2
+if-goto IF_TRUE21
+goto IF_FALSE21
+label IF_TRUE21
+push local 1
+push local 3
+push constant 2
+sub
+eq
+if-goto IF_TRUE22
+goto IF_FALSE22
+label IF_TRUE22
+push constant 1
+pop static 2
+label IF_FALSE22
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE23
+goto IF_FALSE23
+label IF_TRUE23
+push constant 0
+pop static 2
+label IF_FALSE23
+push static 2
+push constant 2
+eq
+if-goto IF_TRUE24
+goto IF_FALSE24
+label IF_TRUE24
+push static 18
+push local 1
+push constant 1
+sub
+push local 0
+push static 10
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 16
+push constant 3
+call Movement.moveEnemy 4
+pop temp 0
+push local 4
+push constant 5
+eq
+push local 4
+push constant 13
+eq
+or
+push local 4
+push constant 23
+eq
+or
+push local 4
+push constant 31
+eq
+or
+push local 4
+push constant 41
+eq
+or
+if-goto IF_TRUE25
+goto IF_FALSE25
+label IF_TRUE25
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+call StringArrayOfArrays.getItem 3
+push static 6
+call StringComparsion.stringComp 2
+if-goto IF_TRUE26
+goto IF_FALSE26
+label IF_TRUE26
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 11
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE26
+label IF_FALSE25
+goto IF_END24
+label IF_FALSE24
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 10
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 13
+push constant 3
+call Movement.moveEnemy 4
+pop temp 0
+push local 0
+push constant 4
+eq
+if-goto IF_TRUE27
+goto IF_FALSE27
+label IF_TRUE27
+push constant 0
+not
+pop static 3
+label IF_FALSE27
+label IF_END24
+label IF_FALSE21
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 11
+call StringComparsion.stringComp 2
+if-goto IF_TRUE28
+goto IF_FALSE28
+label IF_TRUE28
+push local 0
+push constant 4
+lt
+if-goto IF_TRUE29
+goto IF_FALSE29
+label IF_TRUE29
+push static 5
+push local 1
+eq
+push static 5
+push local 1
+push constant 1
+add
+eq
+or
+if-goto IF_TRUE30
+goto IF_FALSE30
+label IF_TRUE30
+push static 0
+push constant 1
+sub
+pop static 0
+label IF_FALSE30
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+goto IF_END29
+label IF_FALSE29
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+call StringArrayOfArrays.getItem 3
+push static 6
+call StringComparsion.stringComp 2
+not
+if-goto IF_TRUE31
+goto IF_FALSE31
+label IF_TRUE31
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push constant 16
+call Math.multiply 2
+push local 1
+push constant 16
+call Math.multiply 2
+push constant 0
+call Display.displayBullet 3
+pop temp 0
+goto IF_END31
+label IF_FALSE31
+push static 18
+push local 1
+push local 0
+push constant 1
+sub
+push static 11
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 13
+call Movement.moveBullet 3
+pop temp 0
+label IF_END31
+label IF_END29
+label IF_FALSE28
+push static 18
+push local 1
+push local 0
+call StringArrayOfArrays.getItem 3
+push static 12
+call StringComparsion.stringComp 2
+if-goto IF_TRUE32
+goto IF_FALSE32
+label IF_TRUE32
+push local 0
+push local 2
+push constant 1
+sub
+eq
+if-goto IF_TRUE33
+goto IF_FALSE33
+label IF_TRUE33
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+goto IF_END33
+label IF_FALSE33
+push static 18
+push local 1
+push local 0
+push constant 1
+add
+call StringArrayOfArrays.getItem 3
+push static 6
+call StringComparsion.stringComp 2
+not
+if-goto IF_TRUE34
+goto IF_FALSE34
+label IF_TRUE34
+push static 18
+push local 1
+push local 0
+push constant 1
+add
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push constant 16
+call Math.multiply 2
+push local 1
+push constant 16
+call Math.multiply 2
+push constant 0
+call Display.displayBullet 3
+pop temp 0
+push local 0
+push constant 1
+add
+push constant 16
+call Math.multiply 2
+push local 1
+push constant 16
+call Math.multiply 2
+push local 0
+push constant 2
+add
+push constant 16
+call Math.multiply 2
+push local 1
+push constant 1
+add
+push constant 16
+call Math.multiply 2
+call Screen.drawRectangle 4
+pop temp 0
+goto IF_END34
+label IF_FALSE34
+push static 18
+push local 1
+push local 0
+push constant 1
+add
+push static 12
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push static 18
+push local 1
+push local 0
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+push local 0
+push local 1
+push static 14
+call Movement.moveBullet 3
+pop temp 0
+label IF_END34
+label IF_END33
+label IF_FALSE32
+push local 1
+push constant 1
+sub
+pop local 1
+goto WHILE_EXP1
+label WHILE_END1
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push static 1
+push constant 1
+sub
+pop static 1
+push constant 0
+return

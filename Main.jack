@@ -46,6 +46,7 @@ class Main
     static String right;
     static String up;
     static String down;
+    static int enemyCooldown;
     static StringArrayOfArrays gameField;
 
     function void main() 
@@ -66,7 +67,8 @@ class Main
         let x = 0;
         let y = 0;
         let hp = 3;
-        let cooldown = 10;
+        let cooldown = 3;
+        let enemyCooldown = 25;
         let empty = " ";
         let p = "p";
         let e1 = "e1";
@@ -84,7 +86,7 @@ class Main
             let x = 0;
             while (x < width)
             {
-                if ((x > (width - 2)) & (y > 4) & (y < 11))
+                if ((x > (width - 6)) & (y > 1) & (y < 14))
                 {
                     /**if ((x + y) < 34)
                     {
@@ -101,7 +103,26 @@ class Main
                         
                         //do Display.displayEnemy(x * cellSize, y * cellSize, false, 3);
                     }*/
-                    do gameField.setItem(y, x, e1);
+                    if (x = (width - 5))
+                    {
+                        do gameField.setItem(y, x, empty);
+                    }
+                    if (x = (width - 2))
+                    {
+                        do gameField.setItem(y, x, e1);
+                    }
+                    if (x = (width - 1))
+                    {
+                        do gameField.setItem(y, x, empty);
+                    }
+                    if (x = (width - 3))
+                    {
+                        do gameField.setItem(y, x, empty);
+                    }
+                    if (x = (width - 4))
+                    {
+                        do gameField.setItem(y, x, empty);
+                    }
                 }
                 /**if ((x > 25) & (x < 28) & (y > 5) & (y < 8))
                 {
@@ -160,9 +181,7 @@ class Main
         var int width, height;
         var int tempInt;
         var int cellSize;
-        var boolean isFiring;
         var boolean mayMove;
-        let isFiring = true;
         let mayMove = true;
         //var StringArrayOfArrays nextGameField;
         //let nextGameField = StringArrayOfArrays.new(16, 32);
@@ -198,7 +217,7 @@ class Main
                     {
                         do gameField.setItem(y, 3, bp);
                         do gameField.setItem(y + 1, 3, bp);
-                        let cooldown = 10;
+                        let cooldown = 3;
                         do Movement.moveBullet(4, y, right);
                         do Movement.moveBullet(4, y + 1, right);
                         //do Display.displayBullet(3 * cellSize, y * cellSize, false);
@@ -234,14 +253,14 @@ class Main
                         do gameField.setItem(y - 1, x, e1);
                         do gameField.setItem(y, x, empty);
                         do Movement.moveEnemy(x, y, up, 1);
-                        if ((tempInt = 12) | (tempInt = 20) | (tempInt = 28)| (tempInt = 24))
+                        if (enemyCooldown > 0)
                         {
-                            let isFiring = true;
+                            let enemyCooldown = enemyCooldown - 1;
                         }
                         //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
-                        if (((tempInt = 5) | (tempInt = 13) | (tempInt = 23) | (tempInt = 31) | (tempInt = 41)) & isFiring)
+                        if (((tempInt = 8) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
-                            let isFiring = false;
+                            let enemyCooldown = 22;
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
@@ -398,9 +417,7 @@ class Main
         var int width, height;
         var int tempInt;
         var int cellSize;
-        var boolean isFiring;
         var boolean mayMove;
-        let isFiring = true;
         let mayMove = true;
         //var StringArrayOfArrays nextGameField;
         //let nextGameField = StringArrayOfArrays.new(16, 32);
@@ -435,7 +452,7 @@ class Main
                     {
                         do gameField.setItem(y, 3, bp);
                         do gameField.setItem(y + 1, 3, bp);
-                        let cooldown = 10;
+                        let cooldown = 3;
                         do Movement.moveBullet(4, y, right);
                         do Movement.moveBullet(4, y + 1, right);
                         //do Display.displayBullet(3 * cellSize, y * cellSize, false);
@@ -470,14 +487,14 @@ class Main
                         do gameField.setItem(y + 1, x, e1);
                         do gameField.setItem(y, x, empty);
                         do Movement.moveEnemy(x, y, down, 1);
-                        if ((tempInt = 14) | (tempInt = 21) | (tempInt = 27) | (tempInt = 28))
+                        if (enemyCooldown > 0)
                         {
-                            let isFiring = true;
+                            let enemyCooldown = enemyCooldown - 1;
                         }
                         //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
-                        if (((tempInt = 5) | (tempInt = 13) | (tempInt = 23) | (tempInt = 31) | (tempInt = 41)) & isFiring)
+                        if (((tempInt = 5) | (tempInt = 26) | (tempInt = 41)) & (enemyCooldown = 0))
                         {
-                            let isFiring = false;
+                            let enemyCooldown = 20;
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
