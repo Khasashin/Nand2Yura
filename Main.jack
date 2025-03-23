@@ -47,6 +47,7 @@ class Main
     static String up;
     static String down;
     static int enemyCooldown;
+    static int enemyCooldownStandard;
     static StringArrayOfArrays gameField;
 
     function void main() 
@@ -69,6 +70,7 @@ class Main
         let hp = 3;
         let cooldown = 3;
         let enemyCooldown = 25;
+        let enemyCooldownStandard = 23;
         let empty = " ";
         let p = "p";
         let e1 = "e1";
@@ -117,11 +119,11 @@ class Main
                     }
                     if (x = (width - 2))
                     {
-                        do gameField.setItem(y, x, e1);
+                        do gameField.setItem(y, x, e2);
                     }
                     if (x = (width - 1))
                     {
-                        do gameField.setItem(y, x, e2);
+                        do gameField.setItem(y, x, e3);
                     }
                     if (x = (width - 3))
                     {
@@ -266,9 +268,9 @@ class Main
                             let enemyCooldown = enemyCooldown - 1;
                         }
                         //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
-                        if (((tempInt = 8) | (tempInt = 12) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
+                        if (((tempInt = 8) | (tempInt = 12) | (tempInt = 16) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
-                            let enemyCooldown = 43;
+                            let enemyCooldown = enemyCooldownStandard;
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
@@ -326,9 +328,9 @@ class Main
                             let enemyCooldown = enemyCooldown - 1;
                         }
                         //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
-                        if (((tempInt = 8) | (tempInt = 12) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
+                        if (((tempInt = 8) | (tempInt = 12) | (tempInt = 16) |  (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
-                            let enemyCooldown = 43;
+                            let enemyCooldown = enemyCooldownStandard;
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
@@ -386,9 +388,9 @@ class Main
                             let enemyCooldown = enemyCooldown - 1;
                         }
                         //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
-                        if (((tempInt = 8) | (tempInt = 12) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
+                        if (((tempInt = 8) | (tempInt = 12) | (tempInt = 16) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
-                            let enemyCooldown = 43;
+                            let enemyCooldown = enemyCooldownStandard;
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
@@ -564,9 +566,9 @@ class Main
                             let enemyCooldown = enemyCooldown - 1;
                         }
                         //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
-                        if (((tempInt = 5) | (tempInt = 9) |  (tempInt = 23) | (tempInt = 41)) & (enemyCooldown = 0))
+                        if (((tempInt = 5) | (tempInt = 9) | (tempInt = 32) | (tempInt = 23) | (tempInt = 41)) & (enemyCooldown = 0))
                         {
-                            let enemyCooldown = 40;
+                            let enemyCooldown = enemyCooldownStandard;
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
@@ -624,9 +626,9 @@ class Main
                             let enemyCooldown = enemyCooldown - 1;
                         }
                         //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
-                        if (((tempInt = 5) | (tempInt = 9) |  (tempInt = 23) | (tempInt = 41)) & (enemyCooldown = 0))
+                        if (((tempInt = 5) | (tempInt = 9) | (tempInt = 32) |  (tempInt = 23) | (tempInt = 41)) & (enemyCooldown = 0))
                         {
-                            let enemyCooldown = 40;
+                            let enemyCooldown = enemyCooldownStandard;
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
@@ -684,9 +686,9 @@ class Main
                             let enemyCooldown = enemyCooldown - 1;
                         }
                         //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
-                        if (((tempInt = 5) | (tempInt = 9) |  (tempInt = 23) | (tempInt = 41)) & (enemyCooldown = 0))
+                        if (((tempInt = 5) | (tempInt = 9) | (tempInt = 32) |  (tempInt = 23) | (tempInt = 41)) & (enemyCooldown = 0))
                         {
-                            let enemyCooldown = 40;
+                            let enemyCooldown = enemyCooldownStandard;
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);

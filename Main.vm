@@ -14,7 +14,7 @@ pop local 0
 push constant 16
 push constant 32
 call StringArrayOfArrays.new 2
-pop static 18
+pop static 19
 push constant 0
 pop local 2
 push constant 0
@@ -25,6 +25,8 @@ push constant 3
 pop static 1
 push constant 25
 pop static 17
+push constant 23
+pop static 18
 push constant 1
 call String.new 1
 push constant 32
@@ -150,7 +152,7 @@ eq
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
-push static 18
+push static 19
 push local 3
 push local 2
 push static 6
@@ -165,7 +167,7 @@ eq
 if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
-push static 18
+push static 19
 push local 3
 push local 2
 push static 6
@@ -180,7 +182,7 @@ eq
 if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
-push static 18
+push static 19
 push local 3
 push local 2
 push static 6
@@ -195,10 +197,10 @@ eq
 if-goto IF_TRUE4
 goto IF_FALSE4
 label IF_TRUE4
-push static 18
+push static 19
 push local 3
 push local 2
-push static 8
+push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
 label IF_FALSE4
@@ -210,10 +212,10 @@ eq
 if-goto IF_TRUE5
 goto IF_FALSE5
 label IF_TRUE5
-push static 18
+push static 19
 push local 3
 push local 2
-push static 9
+push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
 label IF_FALSE5
@@ -225,7 +227,7 @@ eq
 if-goto IF_TRUE6
 goto IF_FALSE6
 label IF_TRUE6
-push static 18
+push static 19
 push local 3
 push local 2
 push static 6
@@ -240,7 +242,7 @@ eq
 if-goto IF_TRUE7
 goto IF_FALSE7
 label IF_TRUE7
-push static 18
+push static 19
 push local 3
 push local 2
 push static 6
@@ -249,7 +251,7 @@ pop temp 0
 label IF_FALSE7
 goto IF_END0
 label IF_FALSE0
-push static 18
+push static 19
 push local 3
 push local 2
 push static 6
@@ -266,7 +268,7 @@ and
 if-goto IF_TRUE8
 goto IF_FALSE8
 label IF_TRUE8
-push static 18
+push static 19
 push local 3
 push local 2
 push static 7
@@ -379,7 +381,7 @@ push local 0
 push local 1
 add
 pop local 4
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -408,7 +410,7 @@ push static 5
 push constant 1
 sub
 pop static 5
-push static 18
+push static 19
 push local 1
 push constant 1
 sub
@@ -416,7 +418,7 @@ push constant 0
 push static 7
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push constant 0
 push static 6
@@ -439,13 +441,13 @@ and
 if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
-push static 18
+push static 19
 push local 1
 push constant 3
 push static 12
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push constant 1
 add
@@ -488,7 +490,7 @@ push static 5
 push constant 1
 add
 pop static 5
-push static 18
+push static 19
 push local 1
 push constant 1
 add
@@ -496,7 +498,7 @@ push constant 0
 push static 7
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push constant 0
 push static 6
@@ -510,7 +512,7 @@ pop temp 0
 label IF_FALSE5
 label IF_FALSE4
 label IF_FALSE0
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -543,7 +545,7 @@ eq
 if-goto IF_TRUE9
 goto IF_FALSE9
 label IF_TRUE9
-push static 18
+push static 19
 push local 1
 push constant 1
 sub
@@ -551,7 +553,7 @@ push local 0
 push static 8
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -582,6 +584,10 @@ push constant 12
 eq
 or
 push local 4
+push constant 16
+eq
+or
+push local 4
 push constant 22
 eq
 or
@@ -596,9 +602,9 @@ and
 if-goto IF_TRUE11
 goto IF_FALSE11
 label IF_TRUE11
-push constant 43
-pop static 17
 push static 18
+pop static 17
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -609,7 +615,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE12
 goto IF_FALSE12
 label IF_TRUE12
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -621,7 +627,7 @@ label IF_FALSE12
 label IF_FALSE11
 goto IF_END9
 label IF_FALSE9
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -632,7 +638,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE13
 goto IF_FALSE13
 label IF_TRUE13
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -640,7 +646,7 @@ sub
 push static 8
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -657,7 +663,7 @@ push constant 1
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE13
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -668,7 +674,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE14
 goto IF_FALSE14
 label IF_TRUE14
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -676,7 +682,7 @@ sub
 push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -693,7 +699,7 @@ push constant 2
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE14
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -704,7 +710,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE15
 goto IF_FALSE15
 label IF_TRUE15
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -712,7 +718,7 @@ sub
 push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -729,7 +735,7 @@ push constant 3
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE15
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -737,7 +743,7 @@ sub
 push static 8
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -761,7 +767,7 @@ pop static 3
 label IF_FALSE16
 label IF_END9
 label IF_FALSE6
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -794,7 +800,7 @@ eq
 if-goto IF_TRUE20
 goto IF_FALSE20
 label IF_TRUE20
-push static 18
+push static 19
 push local 1
 push constant 1
 sub
@@ -802,7 +808,7 @@ push local 0
 push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -833,6 +839,10 @@ push constant 12
 eq
 or
 push local 4
+push constant 16
+eq
+or
+push local 4
 push constant 22
 eq
 or
@@ -847,9 +857,9 @@ and
 if-goto IF_TRUE22
 goto IF_FALSE22
 label IF_TRUE22
-push constant 43
-pop static 17
 push static 18
+pop static 17
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -860,7 +870,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE23
 goto IF_FALSE23
 label IF_TRUE23
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -872,7 +882,7 @@ label IF_FALSE23
 label IF_FALSE22
 goto IF_END20
 label IF_FALSE20
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -883,7 +893,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE24
 goto IF_FALSE24
 label IF_TRUE24
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -891,7 +901,7 @@ sub
 push static 8
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -908,7 +918,7 @@ push constant 1
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE24
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -919,7 +929,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE25
 goto IF_FALSE25
 label IF_TRUE25
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -927,7 +937,7 @@ sub
 push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -944,7 +954,7 @@ push constant 2
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE25
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -955,7 +965,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE26
 goto IF_FALSE26
 label IF_TRUE26
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -963,7 +973,7 @@ sub
 push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -980,7 +990,7 @@ push constant 3
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE26
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -988,7 +998,7 @@ sub
 push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1012,7 +1022,7 @@ pop static 3
 label IF_FALSE27
 label IF_END20
 label IF_FALSE17
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -1045,7 +1055,7 @@ eq
 if-goto IF_TRUE31
 goto IF_FALSE31
 label IF_TRUE31
-push static 18
+push static 19
 push local 1
 push constant 1
 sub
@@ -1053,7 +1063,7 @@ push local 0
 push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1084,6 +1094,10 @@ push constant 12
 eq
 or
 push local 4
+push constant 16
+eq
+or
+push local 4
 push constant 22
 eq
 or
@@ -1098,9 +1112,9 @@ and
 if-goto IF_TRUE33
 goto IF_FALSE33
 label IF_TRUE33
-push constant 43
-pop static 17
 push static 18
+pop static 17
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1111,7 +1125,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE34
 goto IF_FALSE34
 label IF_TRUE34
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1123,7 +1137,7 @@ label IF_FALSE34
 label IF_FALSE33
 goto IF_END31
 label IF_FALSE31
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1134,7 +1148,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE35
 goto IF_FALSE35
 label IF_TRUE35
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -1142,7 +1156,7 @@ sub
 push static 8
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1159,7 +1173,7 @@ push constant 1
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE35
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1170,7 +1184,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE36
 goto IF_FALSE36
 label IF_TRUE36
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -1178,7 +1192,7 @@ sub
 push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1195,7 +1209,7 @@ push constant 2
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE36
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1206,7 +1220,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE37
 goto IF_FALSE37
 label IF_TRUE37
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -1214,7 +1228,7 @@ sub
 push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1231,7 +1245,7 @@ push constant 3
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE37
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1239,7 +1253,7 @@ sub
 push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1263,7 +1277,7 @@ pop static 3
 label IF_FALSE38
 label IF_END31
 label IF_FALSE28
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -1295,7 +1309,7 @@ push constant 1
 sub
 pop static 0
 label IF_FALSE41
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1303,7 +1317,7 @@ call StringArrayOfArrays.setItem 4
 pop temp 0
 goto IF_END40
 label IF_FALSE40
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1315,7 +1329,7 @@ not
 if-goto IF_TRUE42
 goto IF_FALSE42
 label IF_TRUE42
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1323,7 +1337,7 @@ sub
 push static 6
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1340,7 +1354,7 @@ call Display.displayBullet 3
 pop temp 0
 goto IF_END42
 label IF_FALSE42
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1348,7 +1362,7 @@ sub
 push static 11
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1362,7 +1376,7 @@ pop temp 0
 label IF_END42
 label IF_END40
 label IF_FALSE39
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -1379,7 +1393,7 @@ eq
 if-goto IF_TRUE44
 goto IF_FALSE44
 label IF_TRUE44
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1387,7 +1401,7 @@ call StringArrayOfArrays.setItem 4
 pop temp 0
 goto IF_END44
 label IF_FALSE44
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1399,7 +1413,7 @@ not
 if-goto IF_TRUE45
 goto IF_FALSE45
 label IF_TRUE45
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1407,7 +1421,7 @@ add
 push static 6
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1444,7 +1458,7 @@ call Screen.drawRectangle 4
 pop temp 0
 goto IF_END45
 label IF_FALSE45
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1452,7 +1466,7 @@ add
 push static 12
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1524,7 +1538,7 @@ push local 0
 push local 1
 add
 pop local 4
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -1553,7 +1567,7 @@ push static 5
 push constant 1
 sub
 pop static 5
-push static 18
+push static 19
 push local 1
 push constant 1
 sub
@@ -1561,7 +1575,7 @@ push constant 0
 push static 7
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push constant 0
 push static 6
@@ -1584,13 +1598,13 @@ and
 if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
-push static 18
+push static 19
 push local 1
 push constant 3
 push static 12
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push constant 1
 add
@@ -1633,7 +1647,7 @@ push static 5
 push constant 1
 add
 pop static 5
-push static 18
+push static 19
 push local 1
 push constant 1
 add
@@ -1641,7 +1655,7 @@ push constant 0
 push static 7
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push constant 0
 push static 6
@@ -1655,7 +1669,7 @@ pop temp 0
 label IF_FALSE5
 label IF_FALSE4
 label IF_FALSE0
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -1690,7 +1704,7 @@ eq
 if-goto IF_TRUE9
 goto IF_FALSE9
 label IF_TRUE9
-push static 18
+push static 19
 push local 1
 push constant 1
 add
@@ -1698,7 +1712,7 @@ push local 0
 push static 8
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1729,6 +1743,10 @@ push constant 9
 eq
 or
 push local 4
+push constant 32
+eq
+or
+push local 4
 push constant 23
 eq
 or
@@ -1743,9 +1761,9 @@ and
 if-goto IF_TRUE11
 goto IF_FALSE11
 label IF_TRUE11
-push constant 40
-pop static 17
 push static 18
+pop static 17
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1756,7 +1774,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE12
 goto IF_FALSE12
 label IF_TRUE12
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1768,7 +1786,7 @@ label IF_FALSE12
 label IF_FALSE11
 goto IF_END9
 label IF_FALSE9
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1779,7 +1797,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE13
 goto IF_FALSE13
 label IF_TRUE13
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -1787,7 +1805,7 @@ sub
 push static 8
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1804,7 +1822,7 @@ push constant 1
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE13
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1815,7 +1833,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE14
 goto IF_FALSE14
 label IF_TRUE14
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -1823,7 +1841,7 @@ sub
 push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1840,7 +1858,7 @@ push constant 2
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE14
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1851,7 +1869,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE15
 goto IF_FALSE15
 label IF_TRUE15
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -1859,7 +1877,7 @@ sub
 push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1876,7 +1894,7 @@ push constant 3
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE15
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -1884,7 +1902,7 @@ sub
 push static 8
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1908,7 +1926,7 @@ pop static 3
 label IF_FALSE16
 label IF_END9
 label IF_FALSE6
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -1943,7 +1961,7 @@ eq
 if-goto IF_TRUE20
 goto IF_FALSE20
 label IF_TRUE20
-push static 18
+push static 19
 push local 1
 push constant 1
 add
@@ -1951,7 +1969,7 @@ push local 0
 push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -1982,6 +2000,10 @@ push constant 9
 eq
 or
 push local 4
+push constant 32
+eq
+or
+push local 4
 push constant 23
 eq
 or
@@ -1996,9 +2018,9 @@ and
 if-goto IF_TRUE22
 goto IF_FALSE22
 label IF_TRUE22
-push constant 40
-pop static 17
 push static 18
+pop static 17
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2009,7 +2031,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE23
 goto IF_FALSE23
 label IF_TRUE23
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2021,7 +2043,7 @@ label IF_FALSE23
 label IF_FALSE22
 goto IF_END20
 label IF_FALSE20
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2032,7 +2054,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE24
 goto IF_FALSE24
 label IF_TRUE24
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -2040,7 +2062,7 @@ sub
 push static 8
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2057,7 +2079,7 @@ push constant 1
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE24
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2068,7 +2090,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE25
 goto IF_FALSE25
 label IF_TRUE25
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -2076,7 +2098,7 @@ sub
 push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2093,7 +2115,7 @@ push constant 2
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE25
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2104,7 +2126,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE26
 goto IF_FALSE26
 label IF_TRUE26
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -2112,7 +2134,7 @@ sub
 push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2129,7 +2151,7 @@ push constant 3
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE26
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2137,7 +2159,7 @@ sub
 push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -2161,7 +2183,7 @@ pop static 3
 label IF_FALSE27
 label IF_END20
 label IF_FALSE17
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -2196,7 +2218,7 @@ eq
 if-goto IF_TRUE31
 goto IF_FALSE31
 label IF_TRUE31
-push static 18
+push static 19
 push local 1
 push constant 1
 add
@@ -2204,7 +2226,7 @@ push local 0
 push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -2235,6 +2257,10 @@ push constant 9
 eq
 or
 push local 4
+push constant 32
+eq
+or
+push local 4
 push constant 23
 eq
 or
@@ -2249,9 +2275,9 @@ and
 if-goto IF_TRUE33
 goto IF_FALSE33
 label IF_TRUE33
-push constant 40
-pop static 17
 push static 18
+pop static 17
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2262,7 +2288,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE34
 goto IF_FALSE34
 label IF_TRUE34
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2274,7 +2300,7 @@ label IF_FALSE34
 label IF_FALSE33
 goto IF_END31
 label IF_FALSE31
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2285,7 +2311,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE35
 goto IF_FALSE35
 label IF_TRUE35
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -2293,7 +2319,7 @@ sub
 push static 8
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2310,7 +2336,7 @@ push constant 1
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE35
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2321,7 +2347,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE36
 goto IF_FALSE36
 label IF_TRUE36
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -2329,7 +2355,7 @@ sub
 push static 9
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2346,7 +2372,7 @@ push constant 2
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE36
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2357,7 +2383,7 @@ call StringComparsion.stringComp 2
 if-goto IF_TRUE37
 goto IF_FALSE37
 label IF_TRUE37
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 2
@@ -2365,7 +2391,7 @@ sub
 push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2382,7 +2408,7 @@ push constant 3
 call Movement.moveEnemy 4
 pop temp 0
 label IF_FALSE37
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2390,7 +2416,7 @@ sub
 push static 10
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -2414,7 +2440,7 @@ pop static 3
 label IF_FALSE38
 label IF_END31
 label IF_FALSE28
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -2446,7 +2472,7 @@ push constant 1
 sub
 pop static 0
 label IF_FALSE41
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -2454,7 +2480,7 @@ call StringArrayOfArrays.setItem 4
 pop temp 0
 goto IF_END40
 label IF_FALSE40
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2466,7 +2492,7 @@ not
 if-goto IF_TRUE42
 goto IF_FALSE42
 label IF_TRUE42
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2474,7 +2500,7 @@ sub
 push static 6
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -2491,7 +2517,7 @@ call Display.displayBullet 3
 pop temp 0
 goto IF_END42
 label IF_FALSE42
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2499,7 +2525,7 @@ sub
 push static 11
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -2513,7 +2539,7 @@ pop temp 0
 label IF_END42
 label IF_END40
 label IF_FALSE39
-push static 18
+push static 19
 push local 1
 push local 0
 call StringArrayOfArrays.getItem 3
@@ -2530,7 +2556,7 @@ eq
 if-goto IF_TRUE44
 goto IF_FALSE44
 label IF_TRUE44
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -2538,7 +2564,7 @@ call StringArrayOfArrays.setItem 4
 pop temp 0
 goto IF_END44
 label IF_FALSE44
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2550,7 +2576,7 @@ not
 if-goto IF_TRUE45
 goto IF_FALSE45
 label IF_TRUE45
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2558,7 +2584,7 @@ add
 push static 6
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
@@ -2595,7 +2621,7 @@ call Screen.drawRectangle 4
 pop temp 0
 goto IF_END45
 label IF_FALSE45
-push static 18
+push static 19
 push local 1
 push local 0
 push constant 1
@@ -2603,7 +2629,7 @@ add
 push static 12
 call StringArrayOfArrays.setItem 4
 pop temp 0
-push static 18
+push static 19
 push local 1
 push local 0
 push static 6
