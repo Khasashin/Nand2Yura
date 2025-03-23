@@ -195,7 +195,7 @@ class Main
                         if (((tempInt = 8) | (tempInt = 12) | (tempInt = 16) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
                             let enemyCooldown = enemyCooldownStandard;
-                            if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
+                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
                             }
@@ -252,7 +252,7 @@ class Main
                         if (((tempInt = 8) | (tempInt = 12) | (tempInt = 16) |  (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
                             let enemyCooldown = enemyCooldownStandard;
-                            if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
+                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
                             }
@@ -309,7 +309,7 @@ class Main
                         if (((tempInt = 8) | (tempInt = 12) | (tempInt = 16) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
                             let enemyCooldown = enemyCooldownStandard;
-                            if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
+                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
                             }
@@ -469,7 +469,7 @@ class Main
                         if (((tempInt = 5) | (tempInt = 9) | (tempInt = 32) | (tempInt = 23) | (tempInt = 41)) & (enemyCooldown = 0))
                         {
                             let enemyCooldown = enemyCooldownStandard;
-                            if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
+                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
                             }
@@ -526,7 +526,7 @@ class Main
                         if (((tempInt = 5) | (tempInt = 9) | (tempInt = 32) |  (tempInt = 23) | (tempInt = 41)) & (enemyCooldown = 0))
                         {
                             let enemyCooldown = enemyCooldownStandard;
-                            if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
+                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
                             }
@@ -583,7 +583,7 @@ class Main
                         if (((tempInt = 5) | (tempInt = 9) | (tempInt = 32) |  (tempInt = 23) | (tempInt = 41)) & (enemyCooldown = 0))
                         {
                             let enemyCooldown = enemyCooldownStandard;
-                            if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
+                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
                             }

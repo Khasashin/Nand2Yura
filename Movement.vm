@@ -236,10 +236,10 @@ pop temp 0
 push local 1
 push local 2
 push local 1
-push constant 16
+push constant 15
 add
 push local 2
-push constant 16
+push constant 15
 add
 call Screen.drawRectangle 4
 pop temp 0
@@ -271,10 +271,10 @@ pop temp 0
 push local 1
 push local 2
 push local 1
-push constant 16
+push constant 15
 add
 push local 2
-push constant 16
+push constant 15
 add
 call Screen.drawRectangle 4
 pop temp 0
@@ -307,10 +307,10 @@ pop temp 0
 push local 1
 push local 2
 push local 1
-push constant 16
+push constant 15
 add
 push local 2
-push constant 16
+push constant 15
 add
 call Screen.drawRectangle 4
 pop temp 0
@@ -342,10 +342,10 @@ pop temp 0
 push local 1
 push local 2
 push local 1
-push constant 16
+push constant 15
 add
 push local 2
-push constant 16
+push constant 15
 add
 call Screen.drawRectangle 4
 pop temp 0

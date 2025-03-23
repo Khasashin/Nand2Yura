@@ -525,6 +525,15 @@ goto IF_FALSE11
 label IF_TRUE11
 push static 18
 pop static 17
+push local 1
+push constant 0
+gt
+push local 1
+push local 3
+push constant 1
+sub
+lt
+and
 push static 19
 push local 1
 push local 0
@@ -533,6 +542,7 @@ sub
 call StringArrayOfArrays.getItem 3
 push static 6
 call StringComparsion.stringComp 2
+and
 push static 19
 push local 1
 push constant 1
@@ -802,6 +812,15 @@ goto IF_FALSE22
 label IF_TRUE22
 push static 18
 pop static 17
+push local 1
+push constant 0
+gt
+push local 1
+push local 3
+push constant 1
+sub
+lt
+and
 push static 19
 push local 1
 push local 0
@@ -810,6 +829,7 @@ sub
 call StringArrayOfArrays.getItem 3
 push static 6
 call StringComparsion.stringComp 2
+and
 push static 19
 push local 1
 push constant 1
@@ -1079,6 +1099,15 @@ goto IF_FALSE33
 label IF_TRUE33
 push static 18
 pop static 17
+push local 1
+push constant 0
+gt
+push local 1
+push local 3
+push constant 1
+sub
+lt
+and
 push static 19
 push local 1
 push local 0
@@ -1087,6 +1116,7 @@ sub
 call StringArrayOfArrays.getItem 3
 push static 6
 call StringComparsion.stringComp 2
+and
 push static 19
 push local 1
 push constant 1
@@ -1712,6 +1742,15 @@ goto IF_FALSE11
 label IF_TRUE11
 push static 18
 pop static 17
+push local 1
+push constant 0
+gt
+push local 1
+push local 3
+push constant 1
+sub
+lt
+and
 push static 19
 push local 1
 push local 0
@@ -1720,6 +1759,7 @@ sub
 call StringArrayOfArrays.getItem 3
 push static 6
 call StringComparsion.stringComp 2
+and
 push static 19
 push local 1
 push constant 1
@@ -1991,6 +2031,15 @@ goto IF_FALSE22
 label IF_TRUE22
 push static 18
 pop static 17
+push local 1
+push constant 0
+gt
+push local 1
+push local 3
+push constant 1
+sub
+lt
+and
 push static 19
 push local 1
 push local 0
@@ -1999,6 +2048,7 @@ sub
 call StringArrayOfArrays.getItem 3
 push static 6
 call StringComparsion.stringComp 2
+and
 push static 19
 push local 1
 push constant 1
@@ -2270,6 +2320,15 @@ goto IF_FALSE33
 label IF_TRUE33
 push static 18
 pop static 17
+push local 1
+push constant 0
+gt
+push local 1
+push local 3
+push constant 1
+sub
+lt
+and
 push static 19
 push local 1
 push local 0
@@ -2278,6 +2337,7 @@ sub
 call StringArrayOfArrays.getItem 3
 push static 6
 call StringComparsion.stringComp 2
+and
 push static 19
 push local 1
 push constant 1

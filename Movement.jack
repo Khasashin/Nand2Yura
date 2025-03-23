@@ -87,7 +87,7 @@ class Movement
                 while (i < (cellSize / shift)) 
                 {
                     do Screen.setColor(false);
-                    do Screen.drawRectangle(x, y, x + 16, y + 16);
+                    do Screen.drawRectangle(x, y, x + 15, y + 15);
                     let x = x - shift;
                     do Display.displayBullet(x, y, true);
                     let i = i + 1;
@@ -95,7 +95,7 @@ class Movement
                 if (cellX = 4)
                 {
                     do Screen.setColor(false);
-                    do Screen.drawRectangle(x, y, x + 16, y + 16);
+                    do Screen.drawRectangle(x, y, x + 15, y + 15);
                 }
             }
         }
@@ -106,7 +106,7 @@ class Movement
                 while (i < (cellSize / shift)) 
                 {
                     do Screen.setColor(false);
-                    do Screen.drawRectangle(x, y, x + 16, y + 16);
+                    do Screen.drawRectangle(x, y, x + 15, y + 15);
                     let x = x + shift;
                     do Display.displayBullet(x, y, true);
                     let i = i + 1;
@@ -114,7 +114,7 @@ class Movement
                 if (cellX = 30)
                 {
                     do Screen.setColor(false);
-                    do Screen.drawRectangle(x, y, x + 16, y + 16);
+                    do Screen.drawRectangle(x, y, x + 15, y + 15);
                 }
             }
         }
