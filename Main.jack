@@ -86,7 +86,7 @@ class Main
             let x = 0;
             while (x < width)
             {
-                if ((x > (width - 6)) & (y > 1) & (y < 14))
+                if ((x > (width - 8)) & (y > 1) & (y < 15))
                 {
                     /**if ((x + y) < 34)
                     {
@@ -103,6 +103,14 @@ class Main
                         
                         //do Display.displayEnemy(x * cellSize, y * cellSize, false, 3);
                     }*/
+                    if (x = (width - 7))
+                    {
+                        do gameField.setItem(y, x, empty);
+                    }
+                    if (x = (width - 6))
+                    {
+                        do gameField.setItem(y, x, empty);
+                    }
                     if (x = (width - 5))
                     {
                         do gameField.setItem(y, x, empty);
@@ -113,7 +121,7 @@ class Main
                     }
                     if (x = (width - 1))
                     {
-                        do gameField.setItem(y, x, empty);
+                        do gameField.setItem(y, x, e1);
                     }
                     if (x = (width - 3))
                     {
@@ -258,9 +266,9 @@ class Main
                             let enemyCooldown = enemyCooldown - 1;
                         }
                         //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
-                        if (((tempInt = 8) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
+                        if (((tempInt = 8) | (tempInt = 12) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
-                            let enemyCooldown = 22;
+                            let enemyCooldown = 43;
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
@@ -270,6 +278,12 @@ class Main
                     }
                     else
                     {
+                        if (StringComparsion.stringComp(gameField.getItem(y, x - 1), e1))
+                        {
+                            do gameField.setItem(y, x - 2, e1);
+                            do gameField.setItem(y, x - 1, empty);
+                            do Movement.moveEnemy(x - 1, y, left, 1);
+                        }
                         do gameField.setItem(y, x - 1, e1);
                         do gameField.setItem(y, x, empty);
                         do Movement.moveEnemy(x, y, left, 1);
@@ -492,9 +506,9 @@ class Main
                             let enemyCooldown = enemyCooldown - 1;
                         }
                         //do Display.displayEnemy(x * cellSize, (y + 1) * cellSize, true, 1);
-                        if (((tempInt = 5) | (tempInt = 26) | (tempInt = 41)) & (enemyCooldown = 0))
+                        if (((tempInt = 5) | (tempInt = 9) |  (tempInt = 23) | (tempInt = 41)) & (enemyCooldown = 0))
                         {
-                            let enemyCooldown = 20;
+                            let enemyCooldown = 40;
                             if (StringComparsion.stringComp(gameField.getItem(y, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
@@ -504,6 +518,12 @@ class Main
                     }
                     else
                     {
+                        if (StringComparsion.stringComp(gameField.getItem(y, x - 1), e1))
+                        {
+                            do gameField.setItem(y, x - 2, e1);
+                            do gameField.setItem(y, x - 1, empty);
+                            do Movement.moveEnemy(x - 1, y, left, 1);
+                        }
                         do gameField.setItem(y, x - 1, e1);
                         do gameField.setItem(y, x, empty);
                         do Movement.moveEnemy(x, y, left, 1);
