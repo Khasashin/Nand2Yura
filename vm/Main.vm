@@ -21,7 +21,7 @@ push constant 3
 pop static 1
 push constant 25
 pop static 17
-push constant 42
+push constant 12
 pop static 18
 push constant 1
 call String.new 1

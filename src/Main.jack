@@ -45,7 +45,7 @@ class Main
         let hp = 3;
         let cooldown = 3;
         let enemyCooldown = 25;
-        let enemyCooldownStandard = 42;
+        let enemyCooldownStandard = 12;
         let empty = " ";
         let p = "p";
         let e1 = "e1";
