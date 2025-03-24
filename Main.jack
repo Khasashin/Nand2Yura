@@ -57,12 +57,12 @@ class Main
         let right = "right";
         let up = "up";
         let down = "down";
-        do Output.printString("Level: 1 2 3 4");
+        do Output.printString("Level: 1 2 3 4 5");
         let userInputKey = 0;
         while (~isLVL)
         {
             let userInputKey = Keyboard.keyPressed();
-            if ((userInputKey > 48) & (userInputKey < 53))
+            if ((userInputKey > 48) & (userInputKey < 54))
             {
                 let isLVL = true;
             }
@@ -84,6 +84,10 @@ class Main
         if (userInputKey = 52)
         {   
             do Main.doLEVEL4();
+        }
+        if (userInputKey = 53)
+        {   
+            do Main.doLEVEL5();
         }
         do Screen.clearScreen();
         // Добавление игрока x = 0, y = 7
@@ -852,4 +856,42 @@ class Main
         return;
     }
 
+    function void doLEVEL5()
+    {
+        var int width, height;
+        var int x, y;
+        let width = 32;
+        let height = 16;
+        let x = 0;
+        let y = 0;
+        while (y < height) 
+        {
+            let x = 0;
+            while (x < width)
+            {
+                if ((x < 31) & (x > 27) & (y > (0)) & (y < 15))
+                {
+                    if (x = 30)
+                    {
+                        do gameField.setItem(y, x, e3);
+                    }
+                    if (x = 29)
+                    {
+                        do gameField.setItem(y, x, e2);
+                    }
+                    if (x = 28)
+                    {
+                        do gameField.setItem(y, x, e1);
+                    }
+                }
+                else
+                { 
+                    do gameField.setItem(y, x, empty);
+                }
+                let x = x + 1;
+            }
+            let y = y + 1;
+        }
+        return;
+    }
 }

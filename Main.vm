@@ -110,7 +110,7 @@ call String.appendChar 2
 push constant 110
 call String.appendChar 2
 pop static 16
-push constant 14
+push constant 16
 call String.new 1
 push constant 76
 call String.appendChar 2
@@ -140,6 +140,10 @@ push constant 32
 call String.appendChar 2
 push constant 52
 call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 53
+call String.appendChar 2
 call Output.printString 1
 pop temp 0
 push constant 0
@@ -155,7 +159,7 @@ push local 0
 push constant 48
 gt
 push local 0
-push constant 53
+push constant 54
 lt
 and
 if-goto IF_TRUE0
@@ -203,6 +207,15 @@ label IF_TRUE4
 call Main.doLEVEL4 0
 pop temp 0
 label IF_FALSE4
+push local 0
+push constant 53
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+call Main.doLEVEL5 0
+pop temp 0
+label IF_FALSE5
 call Screen.clearScreen 0
 pop temp 0
 push constant 0
@@ -237,14 +250,14 @@ pop local 0
 push local 0
 push constant 81
 eq
-if-goto IF_TRUE5
-goto IF_FALSE5
-label IF_TRUE5
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
 push constant 0
 not
 pop static 3
-goto IF_END5
-label IF_FALSE5
+goto IF_END6
+label IF_FALSE6
 push static 2
 push constant 0
 eq
@@ -252,29 +265,29 @@ push static 2
 push constant 1
 eq
 or
-if-goto IF_TRUE6
-goto IF_FALSE6
-label IF_TRUE6
-push local 0
-call Main.fromUpToDownCycle 1
-pop temp 0
-goto IF_END6
-label IF_FALSE6
-push local 0
-call Main.fromDownToUpCycle 1
-pop temp 0
-label IF_END6
-push static 0
-push constant 1
-lt
 if-goto IF_TRUE7
 goto IF_FALSE7
 label IF_TRUE7
+push local 0
+call Main.fromUpToDownCycle 1
+pop temp 0
+goto IF_END7
+label IF_FALSE7
+push local 0
+call Main.fromDownToUpCycle 1
+pop temp 0
+label IF_END7
+push static 0
+push constant 1
+lt
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
 push constant 0
 not
 pop static 3
-label IF_FALSE7
-label IF_END5
+label IF_FALSE8
+label IF_END6
 goto WHILE_EXP1
 label WHILE_END1
 push constant 0
@@ -3310,6 +3323,109 @@ push local 2
 push constant 21
 gt
 and
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push static 19
+push local 3
+push local 2
+push static 8
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE3
+goto IF_END0
+label IF_FALSE0
+push static 19
+push local 3
+push local 2
+push static 6
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_END0
+push local 2
+push constant 1
+add
+pop local 2
+goto WHILE_EXP1
+label WHILE_END1
+push local 3
+push constant 1
+add
+pop local 3
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Main.doLEVEL5 4
+push constant 32
+pop local 0
+push constant 16
+pop local 1
+push constant 0
+pop local 2
+push constant 0
+pop local 3
+label WHILE_EXP0
+push local 3
+push local 1
+lt
+not
+if-goto WHILE_END0
+push constant 0
+pop local 2
+label WHILE_EXP1
+push local 2
+push local 0
+lt
+not
+if-goto WHILE_END1
+push local 2
+push constant 31
+lt
+push local 2
+push constant 27
+gt
+and
+push local 3
+push constant 0
+gt
+and
+push local 3
+push constant 15
+lt
+and
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 2
+push constant 30
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push static 19
+push local 3
+push local 2
+push static 10
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE1
+push local 2
+push constant 29
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push static 19
+push local 3
+push local 2
+push static 9
+call StringArrayOfArrays.setItem 4
+pop temp 0
+label IF_FALSE2
+push local 2
+push constant 28
+eq
 if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
