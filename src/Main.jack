@@ -7,7 +7,6 @@ class Main
     // "E3" - enemy
     // "BE" - enemy bullet
     // "BP" - player bullet
-    // "W" - wall (possible) 
     static int hp;
     static int cooldown;
     static int enemyDirection; // 0 is "up", 1 is "left", 2 is "down"
@@ -42,8 +41,8 @@ class Main
         let enemyDirection = 0;
         let isGameOver = false;
         let gameField = StringArrayOfArrays.new(16, 32);
-        let hp = 3;
-        let cooldown = 3;
+        let hp = 3; //жизни игрока
+        let cooldown = 3; //время перезарядки 
         let enemyCooldown = 25;
         let enemyCooldownStandard = 12;
         let empty = " ";
@@ -62,7 +61,7 @@ class Main
         while (~isLVL)
         {
             let userInputKey = Keyboard.keyPressed();
-            if ((userInputKey > 48) & (userInputKey < 54))
+            if ((userInputKey > 48) & (userInputKey < 54)) //нажатие клавиш от 1 до 5, для выбора уровня
             {
                 let isLVL = true;
             }
@@ -124,8 +123,7 @@ class Main
     }
 
     function void fromUpToDownCycle(char userKey)
-    {
-        
+    {      
         //enemy shoots only if its x + y cells is 5, 13, 23, 31, 43
         var int x, y;
         var int width, height;
@@ -144,16 +142,13 @@ class Main
         {
             let y = 0;
             let userKey = Keyboard.keyPressed();
-            if ((userKey = 87)) //w
+            if ((userKey = 87) & (playerY > 0)) //w
             {
-                if (playerY > 0)
-                {
-                    let mayMove = false;
-                    do gameField.setItem(playerY - 1, 0, p);
-                    do gameField.setItem(playerY, 0, empty);
-                    do Movement.movePlayer(playerX, playerY, up);
-                    let playerY = playerY - 1;
-                }
+                let mayMove = false;
+                do gameField.setItem(playerY - 1, 0, p);
+                do gameField.setItem(playerY, 0, empty);
+                do Movement.movePlayer(playerX, playerY, up);
+                let playerY = playerY - 1;
             }
             if ((userKey = 83) & (cooldown < 3)) //s
             {
@@ -163,16 +158,13 @@ class Main
                 do Movement.moveBullet(3, playerY, right);
                 do Movement.moveBullet(3, playerY + 1, right);
             }
-            if ((userKey = 88)) //x
+            if ((userKey = 88) & (playerY < 14)) //x
             {
-                if (playerY < 14)
-                {
-                    let mayMove = false;
-                    do gameField.setItem(playerY + 1, 0, p);
-                    do gameField.setItem(playerY, 0, empty);
-                    do Movement.movePlayer(playerX, playerY, down);
-                    let playerY = playerY + 1;
-                }
+                let mayMove = false;
+                do gameField.setItem(playerY + 1, 0, p);
+                do gameField.setItem(playerY, 0, empty);
+                do Movement.movePlayer(playerX, playerY, down);
+                let playerY = playerY + 1;
             }
             while (y < height)
             {
@@ -200,7 +192,9 @@ class Main
                         if (((tempInt = 8) | (tempInt = 12) | (tempInt = 16) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
                             let enemyCooldown = enemyCooldownStandard;
-                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
+                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) 
+                            & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) 
+                            & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
                             }
@@ -257,7 +251,9 @@ class Main
                         if (((tempInt = 8) | (tempInt = 12) | (tempInt = 16) |  (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
                             let enemyCooldown = enemyCooldownStandard;
-                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
+                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) 
+                            & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) 
+                            & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
                             }
@@ -314,7 +310,9 @@ class Main
                         if (((tempInt = 8) | (tempInt = 12) | (tempInt = 16) | (tempInt = 22) | (tempInt = 36)) & (enemyCooldown = 0))
                         {
                             let enemyCooldown = enemyCooldownStandard;
-                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
+                            if ((y > 0) & (y < (height - 1)) & StringComparsion.stringComp(gameField.getItem(y, x - 1), empty) 
+                            & StringComparsion.stringComp(gameField.getItem(y + 1, x - 1), empty) 
+                            & StringComparsion.stringComp(gameField.getItem(y - 1, x - 1), empty))
                             {
                                 do gameField.setItem(y, x - 1, be);
                             }

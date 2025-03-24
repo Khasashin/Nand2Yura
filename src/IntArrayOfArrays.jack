@@ -24,7 +24,7 @@ class IntArrayOfArrays
         var Array supArr;
         if ((x < 0) | (x > (mainLen - 1)) | (y < 0) | (y > (len - 1))) 
         {
-            do Sys.error(5);
+            do Sys.error(52);
         }
         let supArr = mainArr[x];
         let battleShip = supArr[y];
@@ -36,7 +36,7 @@ class IntArrayOfArrays
         var Array supArr;
         if ((x < 0) | (x > (mainLen - 1)) | (y < 0) | (y > (len - 1))) 
         {
-            do Sys.error(5);
+            do Sys.error(72);
         }
         let supArr = mainArr[x];
         let supArr[y] = number;

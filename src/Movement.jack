@@ -30,43 +30,34 @@ class Movement
         let x = cellX * cellSize;
         let y = cellY * cellSize;
         let i = 0;
-        if (StringComparsion.stringComp(direction, left))
+        if ((StringComparsion.stringComp(direction, left)) & (cellX > 3))
         {
-            if (cellX > 3)
+            while (i < (cellSize / shift)) 
             {
-                while (i < (cellSize / shift)) 
-                {
-                    do Display.displayEnemy(x, y, false, enemyType);
-                    let x = x - shift;
-                    do Display.displayEnemy(x, y, true, enemyType);
-                    let i = i + 1;
-                }
+                do Display.displayEnemy(x, y, false, enemyType);
+                let x = x - shift;
+                do Display.displayEnemy(x, y, true, enemyType);
+                let i = i + 1;
             }
         }
-        if (StringComparsion.stringComp(direction, up))
+        if ((StringComparsion.stringComp(direction, up)) & (cellY > 0))
         {
-            if (cellY > 0)
+            while (i < (cellSize / shift)) 
             {
-                while (i < (cellSize / shift)) 
-                {
-                    do Display.displayEnemy(x, y, false, enemyType);
-                    let y = y - shift;
-                    do Display.displayEnemy(x, y, true, enemyType);
-                    let i = i + 1;
-                }
+                do Display.displayEnemy(x, y, false, enemyType);
+                let y = y - shift;
+                do Display.displayEnemy(x, y, true, enemyType);
+                let i = i + 1;
             }
         }
-        if (StringComparsion.stringComp(direction, down))
+        if ((StringComparsion.stringComp(direction, down)) & (cellY < 15))
         {
-            if (cellY < 15)
+            while (i < (cellSize / shift)) 
             {
-                while (i < (cellSize / shift)) 
-                {
-                    do Display.displayEnemy(x, y, false, enemyType);
-                    let y = y + shift;
-                    do Display.displayEnemy(x, y, true, enemyType);
-                    let i = i + 1;
-                }
+                do Display.displayEnemy(x, y, false, enemyType);
+                let y = y + shift;
+                do Display.displayEnemy(x, y, true, enemyType);
+                let i = i + 1;
             }
         }
         return;
@@ -80,42 +71,36 @@ class Movement
         let x = cellX * cellSize;
         let y = cellY * cellSize;
         let i = 0;
-        if (StringComparsion.stringComp(direction, left))
+        if ((StringComparsion.stringComp(direction, left)) & (cellX > 3))
         {
-            if (cellX > 3)
+            while (i < (cellSize / shift)) 
             {
-                while (i < (cellSize / shift)) 
-                {
-                    do Screen.setColor(false);
-                    do Screen.drawRectangle(x, y, x + 15, y + 15);
-                    let x = x - shift;
-                    do Display.displayBullet(x, y, true);
-                    let i = i + 1;
-                }
-                if (cellX = 4)
-                {
-                    do Screen.setColor(false);
-                    do Screen.drawRectangle(x, y, x + 15, y + 15);
-                }
+                do Screen.setColor(false);
+                do Screen.drawRectangle(x, y, x + 15, y + 15);
+                let x = x - shift;
+                do Display.displayBullet(x, y, true);
+                let i = i + 1;
+            }
+            if (cellX = 4)
+            {
+                do Screen.setColor(false);
+                do Screen.drawRectangle(x, y, x + 15, y + 15);
             }
         }
-        if (StringComparsion.stringComp(direction, right))
+        if ((StringComparsion.stringComp(direction, right)) & (cellX < 31))
         {
-            if (cellX < 31)
+            while (i < (cellSize / shift)) 
             {
-                while (i < (cellSize / shift)) 
-                {
-                    do Screen.setColor(false);
-                    do Screen.drawRectangle(x, y, x + 15, y + 15);
-                    let x = x + shift;
-                    do Display.displayBullet(x, y, true);
-                    let i = i + 1;
-                }
-                if (cellX = 30)
-                {
-                    do Screen.setColor(false);
-                    do Screen.drawRectangle(x, y, x + 15, y + 15);
-                }
+                do Screen.setColor(false);
+                do Screen.drawRectangle(x, y, x + 15, y + 15);
+                let x = x + shift;
+                do Display.displayBullet(x, y, true);
+                let i = i + 1;
+            }
+            if (cellX = 30)
+            {
+                do Screen.setColor(false);
+                do Screen.drawRectangle(x, y, x + 15, y + 15);
             }
         }
         return;
@@ -129,30 +114,24 @@ class Movement
         let x = cellX * cellSize;
         let y = cellY * cellSize;
         let i = 0;
-        if (StringComparsion.stringComp(direction, up))
+        if ((StringComparsion.stringComp(direction, up)) & (cellY > 0))
         {
-            if (cellY > 0)
+            while (i < (cellSize / shift)) 
             {
-                while (i < (cellSize / shift)) 
-                {
-                    do Display.displayPlayer(x, y, false);
-                    let y = y - shift;
-                    do Display.displayPlayer(x, y, true);
-                    let i = i + 1;
-                }
+                do Display.displayPlayer(x, y, false);
+                let y = y - shift;
+                do Display.displayPlayer(x, y, true);
+                let i = i + 1;
             }
         }
-        if (StringComparsion.stringComp(direction, down))
+        if ((StringComparsion.stringComp(direction, down)) & (cellY < 14))
         {
-            if (cellY < 14)
+            while (i < (cellSize / shift)) 
             {
-                while (i < (cellSize / shift)) 
-                {
-                    do Display.displayPlayer(x, y, false);
-                    let y = y + shift;
-                    do Display.displayPlayer(x, y, true);
-                    let i = i + 1;
-                }
+                do Display.displayPlayer(x, y, false);
+                let y = y + shift;
+                do Display.displayPlayer(x, y, true);
+                let i = i + 1;
             }
         }
         return;
