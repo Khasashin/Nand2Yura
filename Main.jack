@@ -45,7 +45,7 @@ class Main
         let hp = 3;
         let cooldown = 3;
         let enemyCooldown = 25;
-        let enemyCooldownStandard = 33;
+        let enemyCooldownStandard = 42;
         let empty = " ";
         let p = "p";
         let e1 = "e1";
@@ -57,12 +57,12 @@ class Main
         let right = "right";
         let up = "up";
         let down = "down";
-        do Output.printString("Level: 1 2 3");
+        do Output.printString("Level: 1 2 3 4");
         let userInputKey = 0;
         while (~isLVL)
         {
             let userInputKey = Keyboard.keyPressed();
-            if ((userInputKey > 48) & (userInputKey < 52))
+            if ((userInputKey > 48) & (userInputKey < 53))
             {
                 let isLVL = true;
             }
@@ -80,6 +80,10 @@ class Main
         if (userInputKey = 51)
         {   
             do Main.doLEVEL3();
+        }
+        if (userInputKey = 52)
+        {   
+            do Main.doLEVEL4();
         }
         do Screen.clearScreen();
         // Добавление игрока x = 0, y = 7
@@ -135,43 +139,40 @@ class Main
         while (x < width)
         {
             let y = 0;
+            let userKey = Keyboard.keyPressed();
+            if ((userKey = 87)) //w
+            {
+                if (playerY > 0)
+                {
+                    let mayMove = false;
+                    do gameField.setItem(playerY - 1, 0, p);
+                    do gameField.setItem(playerY, 0, empty);
+                    do Movement.movePlayer(playerX, playerY, up);
+                    let playerY = playerY - 1;
+                }
+            }
+            if ((userKey = 83) & (cooldown < 3)) //s
+            {
+                do gameField.setItem(playerY, 3, bp);
+                do gameField.setItem(playerY + 1, 3, bp);
+                let cooldown = 3;
+                do Movement.moveBullet(3, playerY, right);
+                do Movement.moveBullet(3, playerY + 1, right);
+            }
+            if ((userKey = 88)) //x
+            {
+                if (playerY < 14)
+                {
+                    let mayMove = false;
+                    do gameField.setItem(playerY + 1, 0, p);
+                    do gameField.setItem(playerY, 0, empty);
+                    do Movement.movePlayer(playerX, playerY, down);
+                    let playerY = playerY + 1;
+                }
+            }
             while (y < height)
             {
                 let tempInt = x + y;
-                if (StringComparsion.stringComp(gameField.getItem(y, x), p))
-                {
-                    if ((userKey = 87) & mayMove) //w
-                    {
-                        if (y > 0)
-                        {
-                            let mayMove = false;
-                            let playerY = playerY - 1;
-                            do gameField.setItem(y - 1, 0, p);
-                            do gameField.setItem(y, 0, empty);
-                            do Movement.movePlayer(x, y, up);
-                        }
-                    }
-                    if ((userKey = 83) & (cooldown < 1)) //s
-                    {
-                        do gameField.setItem(y, 3, bp);
-                        do gameField.setItem(y + 1, 3, bp);
-                        let cooldown = 3;
-                        do Movement.moveBullet(4, y, right);
-                        do Movement.moveBullet(4, y + 1, right);
-                    }
-                    if ((userKey = 88) & mayMove) //x
-                    {
-                        if (y < 14)
-                        {
-                            let mayMove = false;
-                            let playerY = playerY + 1;
-                            do gameField.setItem(y + 1, 0, p);
-                            do gameField.setItem(y, 0, empty);
-                            do Movement.movePlayer(x, y, down);
-                        }
-
-                    }
-                }
                 if (StringComparsion.stringComp(gameField.getItem(y, x), e1))
                 {
                     
@@ -410,43 +411,40 @@ class Main
         while (x < width)
         {
             let y = height - 1;
+            let userKey = Keyboard.keyPressed();
+            if ((userKey = 87)) //w
+            {
+                if (playerY > 0)
+                {
+                    let mayMove = false;
+                    do gameField.setItem(playerY - 1, 0, p);
+                    do gameField.setItem(playerY, 0, empty);
+                    do Movement.movePlayer(playerX, playerY, up);
+                    let playerY = playerY - 1;
+                }
+            }
+            if ((userKey = 83) & (cooldown < 3)) //s
+            {
+                do gameField.setItem(playerY, 3, bp);
+                do gameField.setItem(playerY + 1, 3, bp);
+                let cooldown = 3;
+                do Movement.moveBullet(3, playerY, right);
+                do Movement.moveBullet(3, playerY + 1, right);
+            }
+            if ((userKey = 88)) //x
+            {
+                if (playerY < 14)
+                {
+                    let mayMove = false;
+                    do gameField.setItem(playerY + 1, 0, p);
+                    do gameField.setItem(playerY, 0, empty);
+                    do Movement.movePlayer(playerX, playerY, down);
+                    let playerY = playerY + 1;
+                }
+            }
             while ((y + 1) > 0)
             {
                 let tempInt = x + y;
-                if (StringComparsion.stringComp(gameField.getItem(y, x), p))
-                {
-                    if ((userKey = 87) & mayMove) //w
-                    {
-                        if (y > 0)
-                        {
-                            let mayMove = false;
-                            let playerY = playerY - 1;
-                            do gameField.setItem(y - 1, 0, p);
-                            do gameField.setItem(y, 0, empty);
-                            do Movement.movePlayer(x, y, up);
-                        }
-                    }
-                    if ((userKey = 83) & (cooldown < 1)) //s
-                    {
-                        do gameField.setItem(y, 3, bp);
-                        do gameField.setItem(y + 1, 3, bp);
-                        let cooldown = 3;
-                        do Movement.moveBullet(4, y, right);
-                        do Movement.moveBullet(4, y + 1, right);
-                    }
-                    if ((userKey = 88) & mayMove) //x
-                    {
-                        if (y < 14)
-                        {
-                            let mayMove = false;
-                            let playerY = playerY + 1;
-                            do gameField.setItem(y + 1, 0, p);
-                            do gameField.setItem(y, 0, empty);
-                            do Movement.movePlayer(x, y, down);
-                        }
-
-                    }
-                }
                 if (StringComparsion.stringComp(gameField.getItem(y, x), e1))
                 {
                     if (y = (height - 2))
@@ -814,4 +812,44 @@ class Main
         }
         return;
     }
+
+    function void doLEVEL4()
+    {
+        var int width, height;
+        var int x, y;
+        let width = 32;
+        let height = 16;
+        let x = 0;
+        let y = 0;
+        while (y < height) 
+        {
+            let x = 0;
+            while (x < width)
+            {
+                if ((x < 31) & (x > 21) & (y > 1) & (y < 14))
+                {
+                    if (x > 27)
+                    {
+                        do gameField.setItem(y, x, e3);
+                    }
+                    if ((x > 24) & (x < 28))
+                    {
+                        do gameField.setItem(y, x, e2);
+                    }
+                    if ((x < 25) & (x > 21))
+                    {
+                        do gameField.setItem(y, x, e1);
+                    }
+                }
+                else
+                { 
+                    do gameField.setItem(y, x, empty);
+                }
+                let x = x + 1;
+            }
+            let y = y + 1;
+        }
+        return;
+    }
+
 }
